@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chronos Apex - The Pinnacle of Luxury Horology. Experience bespoke timepieces featuring Seiko Astron GPS Solar, Patek Philippe Nautilus, and Casio Edifice series.">
+    <title>CHRONOS APEX | Luxury Horology Showcase</title>
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Aceternity Aurora Canvas Effect -->
+    <div class="aurora-bg" id="aurora-container">
+        <div class="aurora-sphere sphere-1"></div>
+        <div class="aurora-sphere sphere-2"></div>
+        <div class="aurora-sphere sphere-3"></div>
+    </div>
+    
+    <div class="spotlight-overlay" id="mouse-spotlight"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar" id="main-nav">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-text">CHRONOS<span class="logo-accent">APEX</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#hero" class="nav-link-item active">Showcase</a>
+                <a href="#collection" class="nav-link-item">Collection</a>
+                <a href="#specs" class="nav-link-item">Specifications</a>
+                <a href="#movement" class="nav-link-item">Complications</a>
+            </div>
+            <div class="nav-actions">
+                <button class="inquire-btn" id="nav-inquire-trigger">
+                    <span>ALLOCATE TICKET</span>
+                    <span class="material-symbols-rounded">gavel</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Full-bleed Showcase) -->
+    <section class="hero-section" id="hero">
+        <div class="hero-grid-background"></div>
+        
+        <div class="hero-container">
+            <!-- Left Info Panel -->
+            <div class="hero-details-panel">
+                <span class="collection-tag" id="watch-brand-label">PATEK PHILIPPE</span>
+                <h1 class="display-title" id="watch-title-label">COMPLICATIONS<br><span class="accent-title">Ref. 5308G</span></h1>
+                <p class="watch-description" id="watch-desc-label">
+                    Featuring a minute repeater, split-seconds chronograph, and instantaneous perpetual calendar. Cased in premium white gold with a rose-gilt opaline dial.
+                </p>
+                <div class="hero-stats" id="watch-stats-row">
+                    <div class="hero-stat-item">
+                        <span class="stat-lbl">Movement</span>
+                        <span class="stat-val" id="stat-movement">Caliber R CH 27 PS QI</span>
+                    </div>
+                    <div class="hero-stat-item">
+                        <span class="stat-lbl">Reserve</span>
+                        <span class="stat-val" id="stat-reserve">48 Hours</span>
+                    </div>
+                    <div class="hero-stat-item">
+                        <span class="stat-lbl">Water Resistance</span>
+                        <span class="stat-val" id="stat-water">Humidity Protected</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" id="hero-inquire-btn">
+                        <span>Request Private Showcase</span>
+                        <span class="material-symbols-rounded">arrow_right_alt</span>
+                    </button>
+                    <a href="#specs" class="btn btn-secondary">
+                        <span>Technical Details</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Central Watch Display (Spotlight interactive) -->
+            <div class="hero-display-panel">
+                <div class="watch-glow-shadow" id="watch-glow-glow"></div>
+                <div class="watch-display-container" id="watch-interactive-frame">
+                    <img src="assets/Ref. 5308g.png" alt="Luxury Watch Showcase" class="hero-watch-image" id="hero-watch-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Watch Showcase Morph Controller -->
+        <div class="watch-selector-wrap">
+            <span class="selector-heading">CURATED SELECTION</span>
+            <div class="watch-selector-dots" id="watch-switcher-dots">
+                <button class="selector-dot active" data-index="0" title="Patek Philippe Ref. 5308G">
+                    <span class="dot-inner"></span>
+                    <span class="dot-label">Complications 5308G</span>
+                </button>
+                <button class="selector-dot" data-index="1" title="Astron GPS Solar 2026">
+                    <span class="dot-inner"></span>
+                    <span class="dot-label">Astron Solar 2026</span>
+                </button>
+                <button class="selector-dot" data-index="2" title="Seiko 145th Anniversary">
+                    <span class="dot-inner"></span>
+                    <span class="dot-label">Seiko 145th Anniv</span>
+                </button>
+                <button class="selector-dot" data-index="3" title="Casio Edifice Windflow">
+                    <span class="dot-inner"></span>
+                    <span class="dot-label">Edifice Windflow</span>
+                </button>
+                <button class="selector-dot" data-index="4" title="Casio Edifice Night-Time">
+                    <span class="dot-inner"></span>
+                    <span class="dot-label">Edifice Night-Time</span>
+                </button>
+                <button class="selector-dot" data-index="5" title="Casio Royale">
+                    <span class="dot-inner"></span>
+                    <span class="dot-label">Casio Royale</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Grid (Gallery Section) -->
+    <section class="collection-section" id="collection">
+        <div class="container">
+            <div class="section-header">
+                <span class="tagline-top">THE ARCHIVE</span>
+                <h2>THE CURATED COLLECTION</h2>
+                <p>Hover to inspect the structural details of each masterpiece.</p>
+            </div>
+            
+            <div class="collection-grid">
+                <!-- Watch 1 Patek 5308g -->
+                <div class="collection-card border-glow-card" data-index="0">
+                    <div class="card-inner">
+                        <span class="card-brand">PATEK PHILIPPE</span>
+                        <h3>Ref. 5308G Grand Complication</h3>
+                        <div class="card-image-wrap">
+                            <img src="assets/Ref. 5308g.png" alt="Ref. 5308G" class="card-image">
+                        </div>
+                        <div class="card-details">
+                            <p>Featuring a minute repeater, split-seconds chronograph, and instantaneous perpetual calendar.</p>
+                            <span class="card-price">On Application</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Watch 2 Seiko Astron 2026 -->
+                <div class="collection-card border-glow-card" data-index="1">
+                    <div class="card-inner">
+                        <span class="card-brand">SEIKO ASTRON</span>
+                        <h3>Astron GPS Solar 2026 LE</h3>
+                        <div class="card-image-wrap">
+                            <img src="assets/Astron GPS Solar 2026 Limited Edition - Titanium Astron - HAB006J1.webp" alt="Astron HAB006J1" class="card-image">
+                        </div>
+                        <div class="card-details">
+                            <p>Astron GPS Solar 2026 Limited Edition. Super-light titanium casing with GPS time adjustment.</p>
+                            <span class="card-price">$3,400 Limited Edition</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Watch 3 Seiko 145th Anniv -->
+                <div class="collection-card border-glow-card" data-index="2">
+                    <div class="card-inner">
+                        <span class="card-brand">SEIKO ASTRON</span>
+                        <h3>145th Anniversary Blue</h3>
+                        <div class="card-image-wrap">
+                            <img src="assets/Seiko 145th Anniversary Blue Theme - Titanium Astron - HAB004J1.webp" alt="Astron HAB004J1" class="card-image">
+                        </div>
+                        <div class="card-details">
+                            <p>Celebrating 145 years of Seiko precision. Beautiful blue theme on a full-titanium frame.</p>
+                            <span class="card-price">$2,900 Allocation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Watch 4 Casio Edifice Windflow -->
+                <div class="collection-card border-glow-card" data-index="3">
+                    <div class="card-inner">
+                        <span class="card-brand">CASIO EDIFICE</span>
+                        <h3>Edifice Windflow ECB-2200</h3>
+                        <div class="card-image-wrap">
+                            <img src="assets/desktop--edifice-windflow.avif" alt="Edifice Windflow" class="card-image">
+                        </div>
+                        <div class="card-details">
+                            <p>Inspired by motorsport aerodynamics, featuring solar power and Bluetooth smartphone link.</p>
+                            <span class="card-price">$350 Sport Series</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Watch 5 Casio Edifice Night-Time -->
+                <div class="collection-card border-glow-card" data-index="4">
+                    <div class="card-inner">
+                        <span class="card-brand">CASIO EDIFICE</span>
+                        <h3>Edifice Night-Time Series</h3>
+                        <div class="card-image-wrap">
+                            <img src="assets/desktop--edifice-night-time.avif" alt="Edifice Night Time" class="card-image">
+                        </div>
+                        <div class="card-details">
+                            <p>Inspired by night city lights, featuring smartphone link Bluetooth, Tough Solar, and blue accents.</p>
+                            <span class="card-price">$380 Special Edition</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Watch 6 Casio Royale -->
+                <div class="collection-card border-glow-card" data-index="5">
+                    <div class="card-inner">
+                        <span class="card-brand">CASIO CLASSIC</span>
+                        <h3>Royale AE-1200WHD-1AV</h3>
+                        <div class="card-image-wrap">
+                            <img src="assets/AE-1200WHD-1AV.avif" alt="Casio Royale" class="card-image">
+                        </div>
+                        <div class="card-details">
+                            <p>The iconic digital travel companion. Features a world map display and 10-year battery life.</p>
+                            <span class="card-price">$55 Retro Classic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs Section -->
+    <section class="specs-section" id="specs">
+        <div class="container">
+            <div class="grid-2">
+                <div class="specs-visual">
+                    <div class="specs-glow-radial"></div>
+                    <img src="assets/Ref. 5308g.png" alt="Watch Specs View" class="specs-detail-image" id="specs-image-swap">
+                </div>
+                <div class="specs-list-panel">
+                    <span class="tagline-top">SPECIFICATIONS</span>
+                    <h2 id="specs-main-heading">TECHNICAL ATTRIBUTES</h2>
+                    <p class="specs-desc" id="specs-desc-paragraph">
+                        Crafted to exceed the boundaries of mechanical accuracy, this reference represents the absolute pinnacle of luxury hand-finished movements.
+                    </p>
+                    
+                    <div class="specs-table" id="specs-table-rows">
+                        <div class="spec-row">
+                            <span class="spec-label">Reference Number</span>
+                            <span class="spec-value" id="spec-ref-no">5990/1R-001</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Case Materials</span>
+                            <span class="spec-value" id="spec-case-material">18K Rose Gold</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Dimensions</span>
+                            <span class="spec-value" id="spec-dimensions">40.5 mm Diameter, 12.5 mm Height</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Caliber</span>
+                            <span class="spec-value" id="spec-caliber">CH 28-520 C FUS (Self-winding)</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Complications</span>
+                            <span class="spec-value" id="spec-complications">Flyback Chronograph, Dual Time, Local Date</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Strap/Bracelet</span>
+                            <span class="spec-value" id="spec-bracelet">Rose Gold Link with Patented Fold-Over Clasp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep-Dive Complication Section -->
+    <section class="movement-section" id="movement">
+        <div class="container">
+            <div class="section-header center">
+                <span class="tagline-top">COMAPLICATIONS DEEP-DIVE</span>
+                <h2>UNDER THE GLASS</h2>
+                <p>An inside look at Patek Philippe's Self-Winding Caliber CH 28-520 C FUS.</p>
+            </div>
+            
+            <div class="movement-showcase grid-2">
+                <div class="movement-details">
+                    <div class="comp-box active" data-comp="flyback">
+                        <h3>FLYBACK CHRONOGRAPH</h3>
+                        <p>Unlike standard chronographs where you must stop, reset, and restart, the flyback function allows instantaneous resetting of the running second hand to zero with a single push of the button, immediately starting a new timer run.</p>
+                    </div>
+                    <div class="comp-box" data-comp="dualtime">
+                        <h3>TRAVEL TIME DUAL INDICATOR</h3>
+                        <p>Features two hour hands on the central axis. The lower, open-worked hour hand represents home time, while the solid hand represents local time. Two small day/night apertures indicate PM/AM in both regions.</p>
+                    </div>
+                    <div class="comp-box" data-comp="solar">
+                        <h3>GPS ATOMIC CALIBRATION</h3>
+                        <p>For our Seiko Astron selections: Connects to the GPS satellite network at the touch of a button, determining your time zone and adjusting the hands with atomic clock precision, powered purely by light energy.</p>
+                    </div>
+                </div>
+
+                <div class="movement-visualizer">
+                    <div class="casing-rim">
+                        <div class="inner-gear-system">
+                            <div class="center-rotor animate-rotor">
+                                <div class="rotor-weight">CALIBER CH 28-520</div>
+                            </div>
+                            <div class="gear gear-1 animate-gear"></div>
+                            <div class="gear gear-2 animate-gear-reverse"></div>
+                            <div class="balance-wheel animate-balance"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy/Inquire CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-banner">
+                <div class="cta-glow"></div>
+                <div class="cta-content">
+                    <h2>BEGIN YOUR LEGACY</h2>
+                    <p>
+                        Allocations for these premium watches are highly limited. Secure your ticket for a private consultation, virtual showing, or regional allocation.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" id="cta-inquire-trigger">
+                            <span>Request Booking</span>
+                            <span class="material-symbols-rounded">confirmation_number</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container flex-between">
+            <p class="footer-logo">CHRONOS<span class="logo-accent">APEX</span></p>
+            <p>&copy; 2026 Chronos Apex S.A. All rights reserved. Designed by Antigravity.</p>
+            <div class="footer-socials">
+                <a href="#">Instagram</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inquiry Modal -->
+    <div class="modal-overlay" id="inquire-modal">
+        <div class="modal-container">
+            <button class="close-modal-btn" id="close-inquire-modal">
+                <span class="material-symbols-rounded">close</span>
+            </button>
+            <div class="modal-header">
+                <h2>ACQUISITION DESK</h2>
+                <p>Register your interest. Our consultants will contact you within 24 hours.</p>
+            </div>
+            
+            <form id="inquiry-form" class="inquiry-form">
+                <div class="form-group">
+                    <label for="client-name">Full Name</label>
+                    <input type="text" id="client-name" required placeholder="Girish Kumar">
+                    <span class="error-msg" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="client-email">Email Address</label>
+                    <input type="email" id="client-email" required placeholder="name@domain.com">
+                    <span class="error-msg" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="client-watch">Model of Interest</label>
+                    <select id="client-watch">
+                        <option value="nautilus">Patek Philippe Nautilus Ref. 5990/1R</option>
+                        <option value="5308g">Patek Philippe Ref. 5308G Grand Complication</option>
+                        <option value="astron2026">Seiko Astron GPS Solar 2026 Limited Edition</option>
+                        <option value="seiko145">Seiko 145th Anniversary Blue Theme</option>
+                        <option value="edifice">Casio Edifice Series Chronograph</option>
+                        <option value="casioroyale">Casio Royale AE-1200WHD-1AV</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="client-message">Special Requests / Casing preferences</label>
+                    <textarea id="client-message" placeholder="Provide details regarding delivery location, engraving, or specific requests..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span>TRANSMIT REQUISITION</span>
+                    <span class="material-symbols-rounded">send</span>
+                </button>
+            </form>
+
+            <!-- Success State -->
+            <div class="success-state hidden" id="inquiry-success">
+                <div class="success-icon">
+                    <span class="material-symbols-rounded">verified</span>
+                </div>
+                <h3>REQUISITION RECEIVED</h3>
+                <p>Your allocation query has been logged. An advisor from our Private Client Office will reach out shortly.</p>
+                <div class="ticket-mock">
+                    <div class="ticket-header">
+                        <h4>CHRONOS APEX</h4>
+                        <span class="ticket-badge">VIP INQUIRY</span>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="ticket-name" id="ticket-client-name">Girish Kumar</p>
+                        <p class="ticket-watch-model" id="ticket-watch-model">Patek Philippe Nautilus 5990/1R</p>
+                        <p class="ticket-code" id="ticket-reference-id">REF-APEX-99812-G</p>
+                    </div>
+                </div>
+                <button class="btn btn-secondary btn-block" id="close-success-btn">Return to Salon</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
