@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chronos Apex - Audemars Piguet Royal Oak Jumbo Showcase. Experience the legendary timepiece.">
-    <title>CHRONOS APEX | Royal Oak Jumbo Showcase</title>
+    <meta name="description" content="Chronos Apex - Luxury Watch Showcase. Experience the legendary Audemars Piguet Royal Oak and Patek Philippe 5304/301R-001.">
+    <title>CHRONOS APEX | Premium Luxury Horology Showcase</title>
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,83 +43,98 @@
         </div>
     </nav>
  
-    <!-- Hero Section (Patek Philippe Grid Layout) -->
+    <!-- Hero Section (Patek Philippe Grid Layout & Full-bleed background) -->
     <section class="hero-section" id="hero">
         <div class="hero-grid-background"></div>
         
-        <div class="hero-container-patek">
-            <!-- Left Info Panel (Ref & Category) -->
-            <div class="patek-category-panel">
-                <span class="patek-brand">AUDEMARS PIGUET</span>
-                <span class="patek-category">ROYAL OAK</span>
-                <span class="patek-ref">16202ST.OO.1240ST.02</span>
+        <!-- Full-bleed background image element -->
+        <div class="hero-bleed-image-wrap">
+            <img src="assets/watch_bleed_bg.jpg" alt="Luxury watch background" class="hero-bleed-bg-img">
+        </div>
+        
+        <div class="hero-contents-wrapper">
+            <!-- Watch Selection Tabs at the top of the Showcase -->
+            <div class="watch-selection-container scroll-reveal">
+                <div class="watch-selection-tabs">
+                    <button class="watch-tab active" data-watch="ap">AP ROYAL OAK JUMBO</button>
+                    <button class="watch-tab" data-watch="patek">PATEK PHILIPPE 5304</button>
+                </div>
             </div>
             
-            <!-- Left Column: Main Image Viewer with Pan-Zoom -->
-            <div class="patek-display-panel">
-                <div class="zoom-lens-container" id="zoom-container">
-                    <img src="assets/royal_oak_front.jpg" alt="AP Royal Oak Jumbo" class="main-watch-image" id="main-watch-img">
-                    <div class="zoom-indicator">
-                        <span class="material-symbols-rounded">zoom_in</span>
-                        <span>HOVER TO ZOOM DETAILS</span>
-                    </div>
+            <div class="hero-container-patek">
+                <!-- Left Info Panel (Ref & Category) -->
+                <div class="patek-category-panel">
+                    <span class="patek-brand" id="watch-brand-label">AUDEMARS PIGUET</span>
+                    <span class="patek-category" id="watch-category-label">ROYAL OAK</span>
+                    <span class="patek-ref" id="watch-ref-label">16202ST.OO.1240ST.02</span>
                 </div>
-            </div>
-
-            <!-- Middle Column: Vertical Thumbnails Selector -->
-            <div class="patek-thumbnails-panel">
-                <div class="thumbnail-list" id="thumbnail-container">
-                    <div class="thumbnail-item active" data-index="0" title="The Icon (Front)">
-                        <img src="assets/royal_oak_front.jpg" alt="Icon View">
-                    </div>
-                    <div class="thumbnail-item" data-index="1" title="The Craft (Angle)">
-                        <img src="assets/royal_oak_angle.jpg" alt="Angle View">
-                    </div>
-                    <div class="thumbnail-item" data-index="2" title="The Heart (Caliber)">
-                        <img src="assets/royal_oak_movement.jpg" alt="Movement View">
-                    </div>
-                    <div class="thumbnail-item" data-index="3" title="On Wrist (Fit)">
-                        <img src="assets/royal_oak_wrist.jpg" alt="Wrist View">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Product Specs & Details -->
-            <div class="patek-details-panel">
-                <h1 class="patek-title" id="patek-watch-title">Royal Oak "Jumbo" Extra-Thin</h1>
-                <div class="patek-price-tag">₹2,900,000 <span class="price-suffix">(Est. Retail)</span></div>
                 
-                <p class="patek-description" id="patek-watch-desc">
-                    Celebrating a legacy of design. The Royal Oak 'Jumbo' Extra-Thin features the legendary 39mm stainless steel case, an ultra-flat profile, and the iconic octagonal bezel.
-                </p>
-
-                <div class="patek-specs-highlights">
-                    <div class="highlight-row">
-                        <span class="hl-label">Case Profile</span>
-                        <span class="hl-value">Stainless Steel, Glareproofed Sapphire</span>
-                    </div>
-                    <div class="highlight-row">
-                        <span class="hl-label">Dial Art</span>
-                        <span class="hl-value">"Bleu Nuit Nuage 50" Petite Tapisserie</span>
-                    </div>
-                    <div class="highlight-row">
-                        <span class="hl-label">Movement</span>
-                        <span class="hl-value" id="patek-caliber-stat">Caliber 7121 (Self-winding)</span>
-                    </div>
-                    <div class="highlight-row">
-                        <span class="hl-label">Thickness</span>
-                        <span class="hl-value">8.1 mm Ultra-Thin Casing</span>
+                <!-- Left Column: Main Image Viewer with Pan-Zoom -->
+                <div class="patek-display-panel">
+                    <div class="zoom-lens-container" id="zoom-container">
+                        <img src="assets/royal_oak_front.jpg" alt="Watch Showcase" class="main-watch-image" id="main-watch-img">
+                        <div class="zoom-indicator">
+                            <span class="material-symbols-rounded">zoom_in</span>
+                            <span>HOVER TO ZOOM DETAILS</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="patek-actions">
-                    <button class="btn btn-primary" id="hero-inquire-btn">
-                        <span>Request Allocation</span>
-                        <span class="material-symbols-rounded">arrow_right_alt</span>
-                    </button>
-                    <a href="#specs" class="btn btn-secondary">
-                        <span>Full Specifications</span>
-                    </a>
+ 
+                <!-- Middle Column: Vertical Thumbnails Selector -->
+                <div class="patek-thumbnails-panel">
+                    <div class="thumbnail-list" id="thumbnail-container">
+                        <div class="thumbnail-item active" data-index="0" title="The Icon (Front)" id="thumb-0">
+                            <img src="assets/royal_oak_front.jpg" alt="Icon View">
+                        </div>
+                        <div class="thumbnail-item" data-index="1" title="The Craft (Angle)" id="thumb-1">
+                            <img src="assets/royal_oak_angle.jpg" alt="Angle View">
+                        </div>
+                        <div class="thumbnail-item" data-index="2" title="The Heart (Caliber)" id="thumb-2">
+                            <img src="assets/royal_oak_movement.jpg" alt="Movement View">
+                        </div>
+                        <div class="thumbnail-item" data-index="3" title="On Wrist (Fit)" id="thumb-3">
+                            <img src="assets/royal_oak_wrist.jpg" alt="Wrist View">
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Right Column: Product Specs & Details -->
+                <div class="patek-details-panel">
+                    <h1 class="patek-title" id="patek-watch-title">Royal Oak "Jumbo" Extra-Thin</h1>
+                    <div class="patek-price-tag" id="patek-watch-price">₹2,900,000 <span class="price-suffix" id="patek-price-suffix">(Est. Retail)</span></div>
+                    
+                    <p class="patek-description" id="patek-watch-desc">
+                        Celebrating a legacy of design. The Royal Oak 'Jumbo' Extra-Thin features the legendary 39mm stainless steel case, an ultra-flat profile, and the iconic octagonal bezel.
+                    </p>
+ 
+                    <div class="patek-specs-highlights" id="patek-specs-highlights-rows">
+                        <div class="highlight-row">
+                            <span class="hl-label">Case Profile</span>
+                            <span class="hl-value">Stainless Steel, Glareproofed Sapphire</span>
+                        </div>
+                        <div class="highlight-row">
+                            <span class="hl-label">Dial Art</span>
+                            <span class="hl-value">"Bleu Nuit Nuage 50" Petite Tapisserie</span>
+                        </div>
+                        <div class="highlight-row">
+                            <span class="hl-label">Movement</span>
+                            <span class="hl-value" id="patek-caliber-stat">Caliber 7121 (Self-winding)</span>
+                        </div>
+                        <div class="highlight-row">
+                            <span class="hl-label">Thickness</span>
+                            <span class="hl-value">8.1 mm Ultra-Thin Casing</span>
+                        </div>
+                    </div>
+ 
+                    <div class="patek-actions">
+                        <button class="btn btn-primary" id="hero-inquire-btn">
+                            <span>Request Allocation</span>
+                            <span class="material-symbols-rounded">arrow_right_alt</span>
+                        </button>
+                        <a href="#specs" class="btn btn-secondary">
+                            <span>Full Specifications</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,53 +144,53 @@
     <section class="collection-section" id="collection">
         <div class="container">
             <div class="section-header center scroll-reveal">
-                <span class="tagline-top">THE ANATOMY</span>
-                <h2>THE FOUR HOROLOGICAL PERSPECTIVES</h2>
-                <p>Click on any perspective to inspect its mechanical details above.</p>
+                <span class="tagline-top" id="gallery-tagline">THE ANATOMY</span>
+                <h2 id="gallery-heading">THE THREE HOROLOGICAL PERSPECTIVES</h2>
+                <p id="gallery-desc">Click on any perspective to inspect its mechanical details above.</p>
             </div>
             
-            <div class="collection-grid">
+            <div class="collection-grid" id="gallery-grid-cards">
                 <!-- Angle 1 Front View -->
-                <div class="collection-card border-glow-card scroll-reveal" data-index="0">
+                <div class="collection-card border-glow-card scroll-reveal" data-index="0" id="gal-card-0">
                     <div class="card-inner">
-                        <span class="card-brand">PERSPECTIVE I</span>
-                        <h3>The Icon</h3>
+                        <span class="card-brand" id="gal-card-0-brand">PERSPECTIVE I</span>
+                        <h3 id="gal-card-0-title">The Icon</h3>
                         <div class="card-image-wrap">
-                            <img src="assets/royal_oak_front.jpg" alt="Royal Oak Front View" class="card-image">
+                            <img src="assets/royal_oak_front.jpg" alt="Royal Oak Front View" class="card-image" id="gal-card-0-img">
                         </div>
                         <div class="card-details">
-                            <p>Featuring the legendary 39mm stainless steel case, tapisserie blue dial, and hand-finished octagonal bezel.</p>
-                            <span class="card-price">Ref. 16202ST</span>
+                            <p id="gal-card-0-desc">Featuring the legendary 39mm stainless steel case, tapisserie blue dial, and hand-finished octagonal bezel.</p>
+                            <span class="card-price" id="gal-card-0-price">Ref. 16202ST</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Angle 2 Side Angle -->
-                <div class="collection-card border-glow-card scroll-reveal" data-index="1">
+                <div class="collection-card border-glow-card scroll-reveal" data-index="1" id="gal-card-1">
                     <div class="card-inner">
-                        <span class="card-brand">PERSPECTIVE II</span>
-                        <h3>The Craftsmanship</h3>
+                        <span class="card-brand" id="gal-card-1-brand">PERSPECTIVE II</span>
+                        <h3 id="gal-card-1-title">The Craftsmanship</h3>
                         <div class="card-image-wrap">
-                            <img src="assets/royal_oak_angle.jpg" alt="Royal Oak Bezel Close-up" class="card-image">
+                            <img src="assets/royal_oak_angle.jpg" alt="Royal Oak Bezel Close-up" class="card-image" id="gal-card-1-img">
                         </div>
                         <div class="card-details">
-                            <p>Showcasing the alternating satin-brushed and polished bevels, white gold screws, and integrated bracelet.</p>
-                            <span class="card-price">Satin-Brushed Steel</span>
+                            <p id="gal-card-1-desc">Showcasing the alternating satin-brushed and polished bevels, white gold screws, and integrated bracelet.</p>
+                            <span class="card-price" id="gal-card-1-price">Satin-Brushed Steel</span>
                         </div>
                     </div>
                 </div>
  
                 <!-- Angle 3 Caseback / Caliber -->
-                <div class="collection-card border-glow-card scroll-reveal" data-index="2">
+                <div class="collection-card border-glow-card scroll-reveal" data-index="2" id="gal-card-2">
                     <div class="card-inner">
-                        <span class="card-brand">PERSPECTIVE III</span>
-                        <h3>The Heart</h3>
+                        <span class="card-brand" id="gal-card-2-brand">PERSPECTIVE III</span>
+                        <h3 id="gal-card-2-title">The Heart</h3>
                         <div class="card-image-wrap">
-                            <img src="assets/royal_oak_movement.jpg" alt="Caliber 7121 Caseback" class="card-image">
+                            <img src="assets/royal_oak_movement.jpg" alt="Caliber 7121 Caseback" class="card-image" id="gal-card-2-img">
                         </div>
                         <div class="card-details">
-                            <p>An open view of Caliber 7121, complete with hand-finished bridges and 22-carat gold openworked rotor.</p>
-                            <span class="card-price">Caliber 7121</span>
+                            <p id="gal-card-2-desc">An open view of Caliber 7121, complete with hand-finished bridges and 22-carat gold openworked rotor.</p>
+                            <span class="card-price" id="gal-card-2-price">Caliber 7121</span>
                         </div>
                     </div>
                 </div>
@@ -235,24 +250,24 @@
     <section class="movement-section" id="movement">
         <div class="container">
             <div class="section-header center scroll-reveal">
-                <span class="tagline-top">CRAFTSMANSHIP DEEP-DIVE</span>
-                <h2>UNDER THE GLASS</h2>
-                <p>An inside look at the technical marvels of the Royal Oak Jumbo.</p>
+                <span class="tagline-top" id="movement-tagline">CRAFTSMANSHIP DEEP-DIVE</span>
+                <h2 id="movement-heading">UNDER THE GLASS</h2>
+                <p id="movement-desc">An inside look at the technical marvels of the Royal Oak Jumbo.</p>
             </div>
             
             <div class="movement-showcase grid-2">
-                <div class="movement-details scroll-reveal">
-                    <div class="comp-box active" data-comp="flyback">
-                        <h3>PETITE TAPISSERIE DIAL</h3>
-                        <p>The guilloché dial is produced using a rare engine-turning technique on old-world pantograph machines. It forms a grid of thousands of tiny truncated pyramids that reflect light differently at every angle.</p>
+                <div class="movement-details scroll-reveal" id="complications-boxes-wrap">
+                    <div class="comp-box active" data-comp="flyback" id="comp-box-0">
+                        <h3 class="comp-box-0-title">PETITE TAPISSERIE DIAL</h3>
+                        <p class="comp-box-0-desc">The guilloché dial is produced using a rare engine-turning technique on old-world pantograph machines. It forms a grid of thousands of tiny truncated pyramids that reflect light differently at every angle.</p>
                     </div>
-                    <div class="comp-box" data-comp="dualtime">
-                        <h3>EXTRA-THIN CALIBER 7121</h3>
-                        <p>Specifically engineered to sit inside the extra-thin 8.1 mm case, the Caliber 7121 has a total thickness of only 3.2 mm. It houses a bidirectional rotor mounted on ball bearings and circular-grained bridges.</p>
+                    <div class="comp-box" data-comp="dualtime" id="comp-box-1">
+                        <h3 class="comp-box-1-title">EXTRA-THIN CALIBER 7121</h3>
+                        <p class="comp-box-1-desc">Specifically engineered to sit inside the extra-thin 8.1 mm case, the Caliber 7121 has a total thickness of only 3.2 mm. It houses a bidirectional rotor mounted on ball bearings and circular-grained bridges.</p>
                     </div>
-                    <div class="comp-box" data-comp="solar">
-                        <h3>INTEGRATED BRACELET</h3>
-                        <p>A masterpiece of ergonomics and metallurgy. Composed of links decreasing in size, it fits the wrist perfectly. Every single link is meticulously hand-brushed and polished to absolute perfection.</p>
+                    <div class="comp-box" data-comp="solar" id="comp-box-2">
+                        <h3 class="comp-box-2-title">INTEGRATED BRACELET</h3>
+                        <p class="comp-box-2-desc">A masterpiece of ergonomics and metallurgy. Composed of links decreasing in size, it fits the wrist perfectly. Every single link is meticulously hand-brushed and polished to absolute perfection.</p>
                     </div>
                 </div>
  
@@ -260,7 +275,7 @@
                     <div class="casing-rim">
                         <div class="inner-gear-system">
                             <div class="center-rotor animate-rotor">
-                                <div class="rotor-weight">CALIBER 7121</div>
+                                <div class="rotor-weight" id="rotor-weight-text">CALIBER 7121</div>
                             </div>
                             <div class="gear gear-1 animate-gear"></div>
                             <div class="gear gear-2 animate-gear-reverse"></div>
@@ -279,7 +294,7 @@
                 <div class="cta-glow"></div>
                 <div class="cta-content">
                     <h2>BEGIN YOUR LEGACY</h2>
-                    <p>
+                    <p id="cta-banner-desc">
                         Allocations for this premium timepiece are highly limited. Secure your ticket for a private consultation, virtual showing, or regional allocation.
                     </p>
                     <div class="cta-buttons">
@@ -330,10 +345,10 @@
                 <div class="form-group">
                     <label for="client-watch">Perspective / Version of Interest</label>
                     <select id="client-watch">
-                        <option value="jumbo-icon">Royal Oak Jumbo - The Icon (Front View)</option>
-                        <option value="jumbo-craft">Royal Oak Jumbo - The Craft (Angle View)</option>
-                        <option value="jumbo-heart">Royal Oak Jumbo - The Heart (Caliber 7121)</option>
-                        <option value="jumbo-wrist">Royal Oak Jumbo - On Wrist (Wear view)</option>
+                        <option value="jumbo-icon" id="modal-opt-0">AP Royal Oak - The Icon (Front View)</option>
+                        <option value="jumbo-craft" id="modal-opt-1">AP Royal Oak - The Craft (Angle View)</option>
+                        <option value="jumbo-heart" id="modal-opt-2">AP Royal Oak - The Heart (Caliber 7121)</option>
+                        <option value="jumbo-wrist" id="modal-opt-3">AP Royal Oak - On Wrist (Wear view)</option>
                     </select>
                 </div>
                 <div class="form-group">

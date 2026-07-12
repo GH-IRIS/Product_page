@@ -281,12 +281,12 @@ body {
     width: 100%;
 }
  
-/* Hero Section */
+/* Hero Section (Full-bleed Background Support) */
 .hero-section {
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    padding-top: 100px;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     overflow: hidden;
 }
@@ -304,16 +304,85 @@ body {
     z-index: -1;
 }
  
+/* Full-bleed background image wrapper */
+.hero-bleed-image-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    overflow: hidden;
+}
+ 
+.hero-bleed-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.12; /* subtle ghosting behind content for premium look */
+    filter: grayscale(40%) contrast(1.1);
+}
+ 
+.hero-contents-wrapper {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 110px 0 40px 0;
+}
+ 
 /* Patek Style Hero Grid */
 .hero-container-patek {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 20px 24px;
     display: grid;
     grid-template-columns: 0.8fr 2.2fr 0.4fr 2.1fr;
     gap: 40px;
     align-items: center;
+}
+ 
+/* Watch Selection Tab Layout */
+.watch-selection-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+ 
+.watch-selection-tabs {
+    display: flex;
+    gap: 8px;
+    background: rgba(252, 251, 250, 0.95);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(184, 144, 71, 0.05);
+}
+ 
+.watch-tab {
+    background: transparent;
+    border: none;
+    padding: 8px 24px;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 20px;
+    transition: var(--transition-speed);
+    text-transform: uppercase;
+}
+ 
+.watch-tab:hover, .watch-tab.active {
+    background: var(--accent-color);
+    color: #fcfbfa;
+    box-shadow: 0 4px 15px var(--accent-glow);
 }
  
 /* Left category identifier */
@@ -473,6 +542,7 @@ body {
     color: var(--accent-color);
     margin-bottom: 24px;
     font-weight: 500;
+    transition: opacity var(--transition-speed);
 }
  
 .price-suffix {
@@ -1345,5 +1415,11 @@ input:focus, select:focus, textarea:focus {
     
     .cta-banner {
         padding: 50px 24px;
+    }
+    
+    .watch-selection-tabs {
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
     }
 }
