@@ -4,7 +4,7 @@
 const watchDatabase = [
     {
         brand: "AUDEMARS PIGUET",
-        title: "THE ICON<br><span class='accent-title'>Royal Oak Jumbo</span>",
+        title: "Royal Oak \"Jumbo\" Extra-Thin",
         desc: "Celebrating a legacy of design. The Royal Oak 'Jumbo' Extra-Thin features the legendary 39mm stainless steel case, an ultra-flat profile, and the iconic octagonal bezel.",
         image: "assets/royal_oak_front.jpg",
         imageClass: "",
@@ -22,8 +22,8 @@ const watchDatabase = [
             bracelet: "Integrated Stainless Steel Bracelet"
         },
         theme: {
-            accent: "#a3c2d9", /* Ice steel blue */
-            glow: "rgba(163, 194, 217, 0.25)",
+            accent: "#b89047", /* Classic gold */
+            glow: "rgba(184, 144, 71, 0.15)",
             aurora1: "#0b1528",
             aurora2: "#1c1f24",
             aurora3: "#060a12"
@@ -31,7 +31,7 @@ const watchDatabase = [
     },
     {
         brand: "AUDEMARS PIGUET",
-        title: "THE CRAFT<br><span class='accent-title'>Satin-Brushed Steel</span>",
+        title: "Satin-Brushed Steel Craftsmanship",
         desc: "Every surface of the Royal Oak is meticulously hand-finished, featuring alternating satin-brushed and polished bevels that capture light dynamically.",
         image: "assets/royal_oak_angle.jpg",
         imageClass: "",
@@ -58,7 +58,7 @@ const watchDatabase = [
     },
     {
         brand: "AUDEMARS PIGUET",
-        title: "THE HEART<br><span class='accent-title'>Caliber 7121</span>",
+        title: "Caliber 7121 Mechanical Heart",
         desc: "Designed to fit the extra-thin 8.1mm profile, Caliber 7121 features circular-grained bridges, polished bevels, and an openworked 22-carat gold rotor.",
         image: "assets/royal_oak_movement.jpg",
         imageClass: "",
@@ -82,6 +82,33 @@ const watchDatabase = [
             aurora2: "#1a1204",
             aurora3: "#06060c"
         }
+    },
+    {
+        brand: "AUDEMARS PIGUET",
+        title: "Ergonomics On The Wrist",
+        desc: "With a case thickness of only 8.1mm, the Royal Oak Jumbo fits comfortably and elegantly under any sleeve, offering an unmatched integrated bracelet profile.",
+        image: "assets/royal_oak_wrist.jpg",
+        imageClass: "",
+        stats: {
+            movement: "Caliber 7121, 28.8k vph",
+            reserve: "Integrated Design",
+            water: "Extra-Thin Profile"
+        },
+        specs: {
+            ref: "16202ST.OO.1240ST.02",
+            material: "Integrated Link Bracelet",
+            dimensions: "Tapering width links",
+            caliber: "Extra-Thin Profile case",
+            complications: "Ergonomic wrist alignment",
+            bracelet: "Double-card folder release clasp"
+        },
+        theme: {
+            accent: "#8b9ea7", /* Metallic wrist accent */
+            glow: "rgba(139, 158, 167, 0.2)",
+            aurora1: "#0b1528",
+            aurora2: "#1c1f24",
+            aurora3: "#060a12"
+        }
     }
 ];
  
@@ -92,6 +119,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupSpotlight();
     setupBorderGlowCards();
     setupWatchSelector();
+    setupZoomPan();
     setupComplicationSwitcher();
     setupInquiryModal();
     setupScrollReveal();
@@ -129,15 +157,15 @@ function setupBorderGlowCards() {
  
 // 5. Watch Selector Morph / Theme Switcher
 function setupWatchSelector() {
-    const dots = document.querySelectorAll("#watch-switcher-dots .selector-dot");
+    const thumbs = document.querySelectorAll("#thumbnail-container .thumbnail-item");
     
-    dots.forEach(dot => {
-        dot.addEventListener("click", () => {
-            const index = parseInt(dot.getAttribute("data-index"));
+    thumbs.forEach(thumb => {
+        thumb.addEventListener("click", () => {
+            const index = parseInt(thumb.getAttribute("data-index"));
             if (index === activeWatchIndex) return;
             
-            dots.forEach(d => d.classList.remove("active"));
-            dot.classList.add("active");
+            thumbs.forEach(t => t.classList.remove("active"));
+            thumb.classList.add("active");
             
             morphWatchTheme(index);
         });
@@ -149,9 +177,11 @@ function setupWatchSelector() {
         card.addEventListener("click", () => {
             const index = parseInt(card.getAttribute("data-index"));
             
-            // Switch dot active state
-            dots.forEach(d => d.classList.remove("active"));
-            dots[index].classList.add("active");
+            // Switch thumbnail active state
+            thumbs.forEach(t => t.classList.remove("active"));
+            if (thumbs[index]) {
+                thumbs[index].classList.add("active");
+            }
             
             morphWatchTheme(index);
             
@@ -161,16 +191,39 @@ function setupWatchSelector() {
     });
 }
  
+// Detail zoom panning effect (Patek Philippe Magnifier style)
+function setupZoomPan() {
+    const container = document.getElementById("zoom-container");
+    const img = document.getElementById("main-watch-img");
+    if (!container || !img) return;
+    
+    container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const xPct = (x / rect.width) * 100;
+        const yPct = (y / rect.height) * 100;
+        
+        img.style.transformOrigin = `${xPct}% ${yPct}%`;
+        img.style.transform = "scale(1.8)";
+    });
+    
+    container.addEventListener("mouseleave", () => {
+        img.style.transformOrigin = "center center";
+        img.style.transform = "scale(1)";
+    });
+}
+ 
 // Morph Watch Theme variables and contents
 function morphWatchTheme(index) {
     activeWatchIndex = index;
     const watch = watchDatabase[index];
     
     // Elements to update
-    const brandLabel = document.getElementById("watch-brand-label");
-    const titleLabel = document.getElementById("watch-title-label");
-    const descLabel = document.getElementById("watch-desc-label");
-    const watchImg = document.getElementById("hero-watch-img");
+    const titleLabel = document.getElementById("patek-watch-title");
+    const descLabel = document.getElementById("patek-watch-desc");
+    const watchImg = document.getElementById("main-watch-img");
     const statMov = document.getElementById("stat-movement");
     const statRes = document.getElementById("stat-reserve");
     const statWat = document.getElementById("stat-water");
@@ -182,13 +235,12 @@ function morphWatchTheme(index) {
     const specsCal = document.getElementById("spec-caliber");
     const specsComp = document.getElementById("spec-complications");
     const specsBrac = document.getElementById("spec-bracelet");
+    const specsCaliberStat = document.getElementById("patek-caliber-stat");
  
     // Fade out
-    brandLabel.style.opacity = 0;
     titleLabel.style.opacity = 0;
     descLabel.style.opacity = 0;
     watchImg.style.opacity = 0;
-    watchImg.style.transform = "scale(0.85) translateZ(0)";
     
     setTimeout(() => {
         // Swap CSS root variables for shifting gradients
@@ -200,8 +252,7 @@ function morphWatchTheme(index) {
         root.style.setProperty("--aurora-3", watch.theme.aurora3);
         
         // Update texts
-        brandLabel.textContent = watch.brand;
-        titleLabel.innerHTML = watch.title;
+        titleLabel.textContent = watch.title;
         descLabel.textContent = watch.desc;
         
         // Update stats
@@ -209,9 +260,9 @@ function morphWatchTheme(index) {
         statRes.textContent = watch.stats.reserve;
         statWat.textContent = watch.stats.water;
         
-        // Update image and class tinting
+        // Update image
         watchImg.src = watch.image;
-        watchImg.className = "hero-watch-image " + watch.imageClass;
+        watchImg.className = "main-watch-image " + watch.imageClass;
         
         // Update technical specs table
         specsImg.src = watch.image;
@@ -222,14 +273,16 @@ function morphWatchTheme(index) {
         specsCal.textContent = watch.specs.caliber;
         specsComp.textContent = watch.specs.complications;
         specsBrac.textContent = watch.specs.bracelet;
+        
+        if (specsCaliberStat) {
+            specsCaliberStat.textContent = watch.specs.caliber;
+        }
  
         // Fade in
         setTimeout(() => {
-            brandLabel.style.opacity = 1;
             titleLabel.style.opacity = 1;
             descLabel.style.opacity = 1;
             watchImg.style.opacity = 1;
-            watchImg.style.transform = "scale(1) translateZ(50px)";
         }, 50);
         
     }, 400);
