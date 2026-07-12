@@ -1,173 +1,92 @@
 // Chronos Apex Luxury Watch Showcase Controller
-
-// 1. Curated Watch Database with Morphed Themes
+ 
+// 1. Curated Watch Database with Morphed Themes (AP Royal Oak Jumbo perspectives)
 const watchDatabase = [
     {
-        brand: "PATEK PHILIPPE",
-        title: "COMPLICATIONS<br><span class='accent-title'>Ref. 5308G</span>",
-        desc: "Featuring a minute repeater, split-seconds chronograph, and instantaneous perpetual calendar. Cased in premium white gold with a rose-gilt opaline dial.",
-        image: "assets/Ref. 5308g.png",
+        brand: "AUDEMARS PIGUET",
+        title: "THE ICON<br><span class='accent-title'>Royal Oak Jumbo</span>",
+        desc: "Celebrating a legacy of design. The Royal Oak 'Jumbo' Extra-Thin features the legendary 39mm stainless steel case, an ultra-flat profile, and the iconic octagonal bezel.",
+        image: "assets/royal_oak_front.jpg",
         imageClass: "",
         stats: {
-            movement: "Caliber R CH 27 PS QI",
-            reserve: "48 Hours",
-            water: "Humidity Protected"
+            movement: "Caliber 7121 (Self-winding)",
+            reserve: "60 Hours",
+            water: "50 Meters"
         },
         specs: {
-            ref: "5308G-001",
-            material: "18K White Gold",
-            dimensions: "42 mm Diameter, 14.2 mm Height",
-            caliber: "R CH 27 PS QI (Self-winding)",
-            complications: "Minute Repeater, Split-Seconds Chrono, Perpetual Calendar",
-            bracelet: "Alligator Leather with Fold-Over Clasp"
+            ref: "16202ST.OO.1240ST.02",
+            material: "Stainless Steel Case",
+            dimensions: "39 mm Diameter, 8.1 mm Height",
+            caliber: "Caliber 7121 (Self-winding)",
+            complications: "Hours, Minutes, Date",
+            bracelet: "Integrated Stainless Steel Bracelet"
         },
         theme: {
-            accent: "#d4af37",
-            glow: "rgba(212, 175, 55, 0.15)",
-            aurora1: "#0e111a",
-            aurora2: "#1c1706",
+            accent: "#a3c2d9", /* Ice steel blue */
+            glow: "rgba(163, 194, 217, 0.25)",
+            aurora1: "#0b1528",
+            aurora2: "#1c1f24",
+            aurora3: "#060a12"
+        }
+    },
+    {
+        brand: "AUDEMARS PIGUET",
+        title: "THE CRAFT<br><span class='accent-title'>Satin-Brushed Steel</span>",
+        desc: "Every surface of the Royal Oak is meticulously hand-finished, featuring alternating satin-brushed and polished bevels that capture light dynamically.",
+        image: "assets/royal_oak_angle.jpg",
+        imageClass: "",
+        stats: {
+            movement: "Alternating Finishes",
+            reserve: "Octagonal Bezel",
+            water: "Hexagonal Screws"
+        },
+        specs: {
+            ref: "16202ST.OO.1240ST.02",
+            material: "Hand-finished Stainless Steel",
+            dimensions: "White Gold Bezel Screws",
+            caliber: "Sapphire Crystal with Anti-glare",
+            complications: "Petite Tapisserie Dial pattern",
+            bracelet: "Integrated clasp with AP folding design"
+        },
+        theme: {
+            accent: "#d4af37", /* Warm gold accents */
+            glow: "rgba(212, 175, 55, 0.2)",
+            aurora1: "#1d1a10",
+            aurora2: "#1c1f24",
             aurora3: "#06070a"
         }
     },
     {
-        brand: "SEIKO ASTRON",
-        title: "GPS SOLAR<br><span class='accent-title'>HAB006J1</span>",
-        desc: "Astron GPS Solar 2026 Limited Edition. Super-light titanium casing with a sapphire bezel and carbon dial. Syncs to GPS networks purely via light energy.",
-        image: "assets/Astron GPS Solar 2026 Limited Edition - Titanium Astron - HAB006J1.webp",
+        brand: "AUDEMARS PIGUET",
+        title: "THE HEART<br><span class='accent-title'>Caliber 7121</span>",
+        desc: "Designed to fit the extra-thin 8.1mm profile, Caliber 7121 features circular-grained bridges, polished bevels, and an openworked 22-carat gold rotor.",
+        image: "assets/royal_oak_movement.jpg",
         imageClass: "",
         stats: {
-            movement: "Caliber 5X83 Solar GPS",
-            reserve: "2 Years (Power Save)",
-            water: "100 Meters"
+            movement: "Caliber 7121, 268 parts",
+            reserve: "60 Hours Reserve",
+            water: "28,800 vibrations/h"
         },
         specs: {
-            ref: "HAB006J1 (2026 LE)",
-            material: "Titanium with Super-Hard Coating",
-            dimensions: "42.7 mm Diameter, 12.2 mm Height",
-            caliber: "Seiko 5X83 (Solar GPS Quartz)",
-            complications: "GPS Timezone Sync, Chronograph, World Time (38 zones)",
-            bracelet: "Titanium Bracelet with Smart Adjuster clasp"
+            ref: "Caliber 7121 (In-house)",
+            material: "22-Carat Gold Oscillating Rotor",
+            dimensions: "29.6 mm (12¾ lignes) Diameter, 3.2 mm Thickness",
+            caliber: "Self-winding mechanical",
+            complications: "Patented Extra-Thin Date Mechanism",
+            bracelet: "Circular-graining, Côtes de Genève finishing"
         },
         theme: {
-            accent: "#00f0ff",
-            glow: "rgba(0, 240, 255, 0.25)",
-            aurora1: "#061d2d",
-            aurora2: "#0b1a24",
-            aurora3: "#04070e"
-        }
-    },
-    {
-        brand: "SEIKO ASTRON",
-        title: "145TH ANNIV.<br><span class='accent-title'>HAB004J1</span>",
-        desc: "Special Anniversary edition featuring deep blue themes, matching high-strength titanium casing with scratch-resistant coating, and GPS synchronization.",
-        image: "assets/Seiko 145th Anniversary Blue Theme - Titanium Astron - HAB004J1.webp",
-        imageClass: "",
-        stats: {
-            movement: "Caliber 3X62 Solar GPS",
-            reserve: "6 Months (Power Save)",
-            water: "100 Meters"
-        },
-        specs: {
-            ref: "HAB004J1",
-            material: "Titanium with Blue Ceramic Bezel",
-            dimensions: "41.2 mm Diameter, 12.0 mm Height",
-            caliber: "Seiko 3X62 (Solar GPS Quartz)",
-            complications: "GPS Auto-Time Sync, High Speed Time Zone Adjustment",
-            bracelet: "Titanium Bracelet with Fold-Over push release"
-        },
-        theme: {
-            accent: "#2979ff",
-            glow: "rgba(41, 121, 255, 0.25)",
-            aurora1: "#041029",
-            aurora2: "#080d24",
-            aurora3: "#02040c"
-        }
-    },
-    {
-        brand: "CASIO EDIFICE",
-        title: "WIND FLOW<br><span class='accent-title'>EDIFICE SERIES</span>",
-        desc: "High-performance chronograph designed for motorsport. Smartphone link via Bluetooth, Tough Solar charging, and a carbon fiber reinforced dial.",
-        image: "assets/desktop--edifice-windflow.avif",
-        imageClass: "",
-        stats: {
-            movement: "Tough Solar Chrono",
-            reserve: "5 Months (Solar Charged)",
-            water: "100 Meters"
-        },
-        specs: {
-            ref: "ECB-2200P-1ADF",
-            material: "Carbon-Fiber Reinforced Resin Casing",
-            dimensions: "47.6 mm Diameter, 11.9 mm Height",
-            caliber: "Solar Bluetooth Quartz Module",
-            complications: "Smartphone Link, Lap Timer, Multi-Alarm, Auto LED",
-            bracelet: "Resilient Urethane/Resin Sport Band"
-        },
-        theme: {
-            accent: "#00e5ff",
-            glow: "rgba(0, 229, 255, 0.2)",
-            aurora1: "#0a1c22",
-            aurora2: "#06171f",
-            aurora3: "#03070b"
-        }
-    },
-    {
-        brand: "CASIO EDIFICE",
-        title: "NIGHT-TIME<br><span class='accent-title'>EDIFICE SERIES</span>",
-        desc: "Special edition chronograph inspired by the neon glow of night-time street racing. Features smartphone link Bluetooth connectivity, Tough Solar charging, and deep blue accents.",
-        image: "assets/desktop--edifice-night-time.avif",
-        imageClass: "",
-        stats: {
-            movement: "Tough Solar Quartz",
-            reserve: "5 Months",
-            water: "100 Meters"
-        },
-        specs: {
-            ref: "ECB-2000NP-1A",
-            material: "Carbon-Fiber Casing with Steel Bezel",
-            dimensions: "47.8 mm Diameter, 10.8 mm Height",
-            caliber: "Solar Bluetooth Quartz Module",
-            complications: "Smartphone Link, 1/100-Sec Stopwatch, Double LED light",
-            bracelet: "Solid Stainless Steel Link Bracelet"
-        },
-        theme: {
-            accent: "#3b82f6",
-            glow: "rgba(59, 130, 246, 0.2)",
-            aurora1: "#06102b",
-            aurora2: "#091a3c",
-            aurora3: "#02040c"
-        }
-    },
-    {
-        brand: "CASIO CLASSIC",
-        title: "CASIO ROYALE<br><span class='accent-title'>AE-1200WHD</span>",
-        desc: "The legendary retro travel watch featuring a multi-timezone map, 10-year battery life, analog/digital hybrid displays, and an iconic steel casing design.",
-        image: "assets/AE-1200WHD-1AV.avif",
-        imageClass: "",
-        stats: {
-            movement: "Digital Quartz Module",
-            reserve: "10 Years (Battery)",
-            water: "100 Meters"
-        },
-        specs: {
-            ref: "AE-1200WHD-1AV",
-            material: "Stainless Steel / Chrome Plated Resin",
-            dimensions: "42.1 mm Length, 12.5 mm Height",
-            caliber: "Casio Quartz Module 3299",
-            complications: "World Time (48 cities), Map Display, 5 Alarms, Stopwatch",
-            bracelet: "Stainless Steel Link with Triple-Fold clasp"
-        },
-        theme: {
-            accent: "#ffd600",
-            glow: "rgba(255, 214, 0, 0.2)",
-            aurora1: "#2a2408",
-            aurora2: "#1c1906",
-            aurora3: "#0e0d04"
+            accent: "#dfb15b", /* Golden rotor theme */
+            glow: "rgba(223, 177, 91, 0.2)",
+            aurora1: "#251d0d",
+            aurora2: "#1a1204",
+            aurora3: "#06060c"
         }
     }
 ];
-
+ 
 let activeWatchIndex = 0;
-
+ 
 // 2. Controller Initialization
 window.addEventListener("DOMContentLoaded", () => {
     setupSpotlight();
@@ -175,8 +94,9 @@ window.addEventListener("DOMContentLoaded", () => {
     setupWatchSelector();
     setupComplicationSwitcher();
     setupInquiryModal();
+    setupScrollReveal();
 });
-
+ 
 // 3. Aceternity-style Spotlight Effect (Mouse coordinates tracking)
 function setupSpotlight() {
     const spotlight = document.getElementById("mouse-spotlight");
@@ -190,7 +110,7 @@ function setupSpotlight() {
         spotlight.style.setProperty("--mouse-y", `${yPct}%`);
     });
 }
-
+ 
 // 4. Magic UI Border Glow Cards Effect
 function setupBorderGlowCards() {
     const cards = document.querySelectorAll(".border-glow-card");
@@ -206,7 +126,7 @@ function setupBorderGlowCards() {
         });
     });
 }
-
+ 
 // 5. Watch Selector Morph / Theme Switcher
 function setupWatchSelector() {
     const dots = document.querySelectorAll("#watch-switcher-dots .selector-dot");
@@ -222,7 +142,7 @@ function setupWatchSelector() {
             morphWatchTheme(index);
         });
     });
-
+ 
     // Make gallery cards click to switch as well
     const collectionCards = document.querySelectorAll(".collection-card");
     collectionCards.forEach(card => {
@@ -240,7 +160,7 @@ function setupWatchSelector() {
         });
     });
 }
-
+ 
 // Morph Watch Theme variables and contents
 function morphWatchTheme(index) {
     activeWatchIndex = index;
@@ -262,7 +182,7 @@ function morphWatchTheme(index) {
     const specsCal = document.getElementById("spec-caliber");
     const specsComp = document.getElementById("spec-complications");
     const specsBrac = document.getElementById("spec-bracelet");
-
+ 
     // Fade out
     brandLabel.style.opacity = 0;
     titleLabel.style.opacity = 0;
@@ -302,7 +222,7 @@ function morphWatchTheme(index) {
         specsCal.textContent = watch.specs.caliber;
         specsComp.textContent = watch.specs.complications;
         specsBrac.textContent = watch.specs.bracelet;
-
+ 
         // Fade in
         setTimeout(() => {
             brandLabel.style.opacity = 1;
@@ -314,14 +234,13 @@ function morphWatchTheme(index) {
         
     }, 400);
 }
-
-
+ 
 // 7. Complication Details Switcher
 function setupComplicationSwitcher() {
     const boxes = document.querySelectorAll(".comp-box");
     const balance = document.querySelector(".balance-wheel");
     const gears = document.querySelectorAll(".gear");
-
+ 
     boxes.forEach(box => {
         box.addEventListener("click", () => {
             boxes.forEach(b => b.classList.remove("active"));
@@ -330,15 +249,15 @@ function setupComplicationSwitcher() {
             const comp = box.getAttribute("data-comp");
             
             // Adjust SVG gear animation speeds depending on which complication is selected
-            if (comp === "flyback") {
+            if (comp === "flyback") { // Petite Tapisserie
                 balance.style.animationDuration = "0.8s";
                 gears[0].style.animationDuration = "6s";
                 gears[1].style.animationDuration = "4s";
-            } else if (comp === "dualtime") {
+            } else if (comp === "dualtime") { // Caliber 7121
                 balance.style.animationDuration = "2s";
                 gears[0].style.animationDuration = "20s";
                 gears[1].style.animationDuration = "15s";
-            } else { // solar atomic
+            } else { // Integrated Bracelet
                 balance.style.animationDuration = "0.2s";
                 gears[0].style.animationDuration = "2s";
                 gears[1].style.animationDuration = "1.5s";
@@ -346,7 +265,7 @@ function setupComplicationSwitcher() {
         });
     });
 }
-
+ 
 // 8. Inquiry Modal Controls
 function setupInquiryModal() {
     const modal = document.getElementById("inquire-modal");
@@ -357,7 +276,7 @@ function setupInquiryModal() {
     ];
     const closeBtn = document.getElementById("close-inquire-modal");
     const closeSuccessBtn = document.getElementById("close-success-btn");
-
+ 
     function openModal() {
         modal.classList.add("active");
         
@@ -369,7 +288,7 @@ function setupInquiryModal() {
         
         document.body.style.overflow = "hidden";
     }
-
+ 
     function closeModal() {
         modal.classList.remove("active");
         document.body.style.overflow = "";
@@ -380,44 +299,44 @@ function setupInquiryModal() {
             document.getElementById("inquiry-form").reset();
         }, 300);
     }
-
+ 
     openTriggers.forEach(btn => {
         if (btn) btn.addEventListener("click", openModal);
     });
-
+ 
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
     if (closeSuccessBtn) closeSuccessBtn.addEventListener("click", closeModal);
-
+ 
     modal.addEventListener("click", (e) => {
         if (e.target === modal) closeModal();
     });
-
+ 
     // Form Submission & Validation
     const form = document.getElementById("inquiry-form");
     if (form) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-
+ 
             // Clear errors
             document.querySelectorAll(".error-msg").forEach(span => span.textContent = "");
-
+ 
             const name = document.getElementById("client-name").value.trim();
             const email = document.getElementById("client-email").value.trim();
             const selectEl = document.getElementById("client-watch");
             const watchModel = selectEl.options[selectEl.selectedIndex].text;
-
+ 
             let isValid = true;
-
+ 
             if (name.length < 3) {
                 document.getElementById("name-error").textContent = "Full name must be at least 3 characters.";
                 isValid = false;
             }
-
+ 
             if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                 document.getElementById("email-error").textContent = "Please enter a valid email address.";
                 isValid = false;
             }
-
+ 
             if (isValid) {
                 // Populate Success Ticket details
                 document.getElementById("ticket-client-name").textContent = name;
@@ -425,11 +344,35 @@ function setupInquiryModal() {
                 
                 const randomRef = Math.floor(10000 + Math.random() * 90000);
                 document.getElementById("ticket-reference-id").textContent = `REF-APEX-${randomRef}-G`;
-
+ 
                 // Swap views
                 form.classList.add("hidden");
                 document.getElementById("inquiry-success").classList.remove("hidden");
             }
         });
     }
+}
+ 
+// 9. Scroll Reveal Animations (IntersectionObserver)
+function setupScrollReveal() {
+    const reveals = document.querySelectorAll(".scroll-reveal");
+    
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    reveals.forEach(el => {
+        observer.observe(el);
+    });
 }
