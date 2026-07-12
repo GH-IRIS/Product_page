@@ -6,8 +6,8 @@ const watchModels = {
         brand: "AUDEMARS PIGUET",
         category: "ROYAL OAK",
         ref: "16202ST.OO.1240ST.02",
-        price: "₹2,900,000",
-        priceSuffix: "(Est. Retail)",
+        price: "AUDEMARS PIGUET",
+        priceSuffix: "ROYAL OAK Ref. 16202ST",
         views: [
             {
                 title: "Royal Oak \"Jumbo\" Extra-Thin",
@@ -116,51 +116,14 @@ const watchModels = {
             { label: "Movement", value: "Caliber 7121 (Self-winding)" },
             { label: "Thickness", value: "8.1 mm Ultra-Thin Casing" }
         ],
-        anatomyTitle: "THE THREE HOROLOGICAL PERSPECTIVES",
-        anatomyDesc: "Click on any perspective to inspect its mechanical details above.",
-        galleryCards: [
-            {
-                brand: "PERSPECTIVE I",
-                title: "The Icon",
-                desc: "Featuring the legendary 39mm stainless steel case, tapisserie blue dial, and hand-finished octagonal bezel.",
-                price: "Ref. 16202ST"
-            },
-            {
-                brand: "PERSPECTIVE II",
-                title: "The Craftsmanship",
-                desc: "Showcasing the alternating satin-brushed and polished bevels, white gold screws, and integrated bracelet.",
-                price: "Satin-Brushed Steel"
-            },
-            {
-                brand: "PERSPECTIVE III",
-                title: "The Heart",
-                desc: "An open view of Caliber 7121, complete with hand-finished bridges and 22-carat gold openworked rotor.",
-                price: "Caliber 7121"
-            }
-        ],
-        complications: [
-            {
-                title: "PETITE TAPISSERIE DIAL",
-                desc: "The guilloché dial is produced using a rare engine-turning technique on old-world pantograph machines. It forms a grid of thousands of tiny truncated pyramids that reflect light differently at every angle."
-            },
-            {
-                title: "EXTRA-THIN CALIBER 7121",
-                desc: "Specifically engineered to sit inside the extra-thin 8.1 mm case, the Caliber 7121 has a total thickness of only 3.2 mm. It houses a bidirectional rotor mounted on ball bearings and circular-grained bridges."
-            },
-            {
-                title: "INTEGRATED BRACELET",
-                desc: "A masterpiece of ergonomics and metallurgy. Composed of links decreasing in size, it fits the wrist perfectly. Every single link is meticulously hand-brushed and polished to absolute perfection."
-            }
-        ],
-        rotorText: "CALIBER 7121",
         bannerDesc: "Allocations for this premium timepiece are highly limited. Secure your ticket for a private consultation, virtual showing, or regional allocation."
     },
     patek: {
         brand: "PATEK PHILIPPE",
         category: "GRAND COMPLICATIONS",
         ref: "5304/301R-001",
-        price: "On Application",
-        priceSuffix: "(Haute Joaillerie)",
+        price: "PATEK PHILIPPE",
+        priceSuffix: "GRAND COMPLICATIONS Ref. 5304/301R-001",
         views: [
             {
                 title: "Grand Complications Ref. 5304",
@@ -269,43 +232,6 @@ const watchModels = {
             { label: "Caliber", value: "Caliber R 27 PS QR LU (517 parts)" },
             { label: "Dial Detail", value: "Skeletonized Transparent Sapphire" }
         ],
-        anatomyTitle: "THE FOUR GRAND COMPLICATIONS",
-        anatomyDesc: "Click on any perspective to inspect its mechanical details above.",
-        galleryCards: [
-            {
-                brand: "PERSPECTIVE I",
-                title: "The Repeater",
-                desc: "Skeletonized dial revealing the calendar wheels, star wheels, and minute repeater hammers.",
-                price: "Ref. 5304/301R"
-            },
-            {
-                brand: "PERSPECTIVE II",
-                title: "The Setting",
-                desc: "Bezel, lugs, and slide set with 80 baguette diamonds. Intricate gold leaf inserts set in the side.",
-                price: "Rose & White Gold"
-            },
-            {
-                brand: "PERSPECTIVE III",
-                title: "The Caliber",
-                desc: "A sapphire back revealing the 517 parts caliber R 27, hand-polished hammers, and mini-rotor.",
-                price: "Caliber R 27"
-            }
-        ],
-        complications: [
-            {
-                title: "MINUTE REPEATER",
-                desc: "Sounds the hours, quarter-hours, and minutes on two gongs when the slide on the left side of the case is activated. Tuning is done entirely by hand by a master watchmaker."
-            },
-            {
-                title: "RETROGRADE PERPETUAL CALENDAR",
-                desc: "The date hand moves along a 240° arc and jumps instantaneously back to the 1st of the month at midnight on the last day, automatically accounting for leap years."
-            },
-            {
-                title: "HAUTE JOAILLERIE",
-                desc: "Set with 80 baguette diamonds (~6.22 ct) on the bezel and lugs, and 22 baguette diamonds (~0.97 ct) on the folding clasp. Each gem is selected for D-to-G flawless clarity."
-            }
-        ],
-        rotorText: "CALIBER R 27",
         bannerDesc: "Allocations for this masterpiece minute repeater are extremely exclusive. Secure your ticket for private consultation, virtual showing, or regional allocation."
     }
 };
@@ -318,8 +244,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupSpotlight();
     setupBorderGlowCards();
     setupWatchSelector();
-    setupZoomPan();
-    setupComplicationSwitcher();
+    setupAmazonZoom();
     setupInquiryModal();
     setupScrollReveal();
     setupWatchModelTabs();
@@ -370,48 +295,67 @@ function setupWatchSelector() {
             morphWatchTheme(index);
         });
     });
- 
-    // Make gallery cards click to switch as well
-    const collectionCards = document.querySelectorAll(".collection-card");
-    collectionCards.forEach(card => {
-        card.addEventListener("click", () => {
-            const index = parseInt(card.getAttribute("data-index"));
-            
-            // Switch thumbnail active state
-            thumbs.forEach(t => t.classList.remove("active"));
-            if (thumbs[index]) {
-                thumbs[index].classList.add("active");
-            }
-            
-            morphWatchTheme(index);
-            
-            // Smooth scroll back to hero display
-            document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
-        });
-    });
 }
  
-// Detail zoom panning effect (Patek Philippe Magnifier style)
-function setupZoomPan() {
+// Amazon Product Zoom Effect (High magnification side preview with coordinate tracking)
+function setupAmazonZoom() {
     const container = document.getElementById("zoom-container");
-    const img = document.getElementById("main-watch-img");
-    if (!container || !img) return;
+    const mainImg = document.getElementById("main-watch-img");
+    const lens = document.getElementById("zoom-lens");
+    const preview = document.getElementById("zoom-preview");
+    const previewImg = document.getElementById("zoom-preview-img");
     
-    container.addEventListener("mousemove", (e) => {
-        const rect = container.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const xPct = (x / rect.width) * 100;
-        const yPct = (y / rect.height) * 100;
-        
-        img.style.transformOrigin = `${xPct}% ${yPct}%`;
-        img.style.transform = "scale(1.8)";
+    if (!container || !mainImg || !lens || !preview || !previewImg) return;
+    
+    container.addEventListener("mouseenter", () => {
+        lens.style.display = "block";
+        preview.style.display = "block";
+        previewImg.src = mainImg.src; // load same image
     });
     
     container.addEventListener("mouseleave", () => {
-        img.style.transformOrigin = "center center";
-        img.style.transform = "scale(1)";
+        lens.style.display = "none";
+        preview.style.display = "none";
+    });
+    
+    container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+        
+        // Get relative mouse position inside container
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.top;
+        
+        // Define lens sizing
+        let lensWidth = lens.offsetWidth || 140;
+        let lensHeight = lens.offsetHeight || 140;
+        
+        // Center the highlighter lens on the cursor
+        let lensX = x - (lensWidth / 2);
+        let lensY = y - (lensHeight / 2);
+        
+        // Keep within container bounds
+        if (lensX < 0) lensX = 0;
+        if (lensY < 0) lensY = 0;
+        if (lensX > rect.width - lensWidth) lensX = rect.width - lensWidth;
+        if (lensY > rect.height - lensHeight) lensY = rect.height - lensHeight;
+        
+        // Move lens
+        lens.style.left = `${lensX}px`;
+        lens.style.top = `${lensY}px`;
+        
+        // Calculate ratios
+        const previewWidth = preview.offsetWidth || 480;
+        const previewHeight = preview.offsetHeight || 480;
+        const xRatio = previewWidth / lensWidth;
+        const yRatio = previewHeight / lensHeight;
+        
+        // Align zoomed background preview image in opposite direction
+        previewImg.style.left = `-${lensX * xRatio}px`;
+        previewImg.style.top = `-${lensY * yRatio}px`;
+        
+        // Scale high-res image inside preview window
+        previewImg.style.width = `${rect.width * xRatio}px`;
+        previewImg.style.height = `${rect.height * yRatio}px`;
     });
 }
  
@@ -425,9 +369,7 @@ function morphWatchTheme(index) {
     const titleLabel = document.getElementById("patek-watch-title");
     const descLabel = document.getElementById("patek-watch-desc");
     const watchImg = document.getElementById("main-watch-img");
-    const statMov = document.getElementById("stat-movement");
-    const statRes = document.getElementById("stat-reserve");
-    const statWat = document.getElementById("stat-water");
+    const previewImg = document.getElementById("zoom-preview-img");
     
     const specsImg = document.getElementById("specs-image-swap");
     const specsRef = document.getElementById("spec-ref-no");
@@ -456,24 +398,20 @@ function morphWatchTheme(index) {
         titleLabel.textContent = watch.title;
         descLabel.textContent = watch.desc;
         
-        // Update stats
-        statMov.textContent = watch.stats.movement;
-        statRes.textContent = watch.stats.reserve;
-        statWat.textContent = watch.stats.water;
-        
         // Update image
         watchImg.src = watch.image;
-        watchImg.className = "main-watch-image " + watch.imageClass;
+        if (previewImg) previewImg.src = watch.image;
         
         // Update technical specs table
-        specsImg.src = watch.image;
-        specsImg.className = "specs-detail-image " + watch.imageClass;
-        specsRef.textContent = watch.specs.ref;
-        specsMat.textContent = watch.specs.material;
-        specsDim.textContent = watch.specs.dimensions;
-        specsCal.textContent = watch.specs.caliber;
-        specsComp.textContent = watch.specs.complications;
-        specsBrac.textContent = watch.specs.bracelet;
+        if (specsImg) {
+            specsImg.src = watch.image;
+        }
+        if (specsRef) specsRef.textContent = watch.specs.ref;
+        if (specsMat) specsMat.textContent = watch.specs.material;
+        if (specsDim) specsDim.textContent = watch.specs.dimensions;
+        if (specsCal) specsCal.textContent = watch.specs.caliber;
+        if (specsComp) specsComp.textContent = watch.specs.complications;
+        if (specsBrac) specsBrac.textContent = watch.specs.bracelet;
         
         if (specsCaliberStat) {
             specsCaliberStat.textContent = watch.specs.caliber;
@@ -512,13 +450,19 @@ function switchWatchModel(key) {
     const model = watchModels[key];
     
     // Update category panel
-    document.getElementById("watch-brand-label").textContent = model.brand;
-    document.getElementById("watch-category-label").textContent = model.category;
-    document.getElementById("watch-ref-label").textContent = model.ref;
+    const brandLabel = document.getElementById("watch-brand-label");
+    const catLabel = document.getElementById("watch-category-label");
+    const refLabel = document.getElementById("watch-ref-label");
     
-    // Update price tag
+    if (brandLabel) brandLabel.textContent = model.brand;
+    if (catLabel) catLabel.textContent = model.category;
+    if (refLabel) refLabel.textContent = model.ref;
+    
+    // Update price tag (brand signature text replaces pricing)
     const priceContainer = document.getElementById("patek-watch-price");
-    priceContainer.innerHTML = `${model.price} <span class="price-suffix" id="patek-price-suffix">${model.priceSuffix}</span>`;
+    if (priceContainer) {
+        priceContainer.innerHTML = `${model.price} <span class="price-suffix" id="patek-price-suffix">${model.priceSuffix}</span>`;
+    }
     
     // Update thumbnails image tags
     for (let i = 0; i < 4; i++) {
@@ -546,47 +490,9 @@ function switchWatchModel(key) {
         `).join("");
     }
     
-    // Update Gallery/Perspectives section
-    document.getElementById("gallery-tagline").textContent = model.anatomyTitle === "THE THREE HOROLOGICAL PERSPECTIVES" ? "THE ANATOMY" : "THE GRAND DESIGN";
-    document.getElementById("gallery-heading").textContent = model.anatomyTitle;
-    document.getElementById("gallery-desc").textContent = model.anatomyDesc;
-    
-    for (let i = 0; i < 3; i++) {
-        const cardTitle = document.getElementById(`gal-card-${i}-title`);
-        const cardDesc = document.getElementById(`gal-card-${i}-desc`);
-        const cardImg = document.getElementById(`gal-card-${i}-img`);
-        const cardPrice = document.getElementById(`gal-card-${i}-price`);
-        const cardBrand = document.getElementById(`gal-card-${i}-brand`);
-        
-        if (model.galleryCards[i]) {
-            if (cardTitle) cardTitle.textContent = model.galleryCards[i].title;
-            if (cardDesc) cardDesc.textContent = model.galleryCards[i].desc;
-            if (cardImg) cardImg.src = model.views[i].image;
-            if (cardPrice) cardPrice.textContent = model.galleryCards[i].price;
-            if (cardBrand) cardBrand.textContent = model.galleryCards[i].brand;
-        }
-    }
-    
-    // Update Craftsmanship / Complications boxes
-    document.getElementById("movement-desc").textContent = key === "ap" ? 
-        "An inside look at the technical marvels of the Royal Oak Jumbo." : 
-        "An inside look at Patek Philippe's skeletonized and hand-finished calendar systems.";
-        
-    for (let i = 0; i < 3; i++) {
-        const box = document.getElementById(`comp-box-${i}`);
-        if (box && model.complications[i]) {
-            const h3 = box.querySelector(`h3`);
-            const p = box.querySelector(`p`);
-            if (h3) h3.textContent = model.complications[i].title;
-            if (p) p.textContent = model.complications[i].desc;
-        }
-    }
-    
-    // Update visualizer rotor weight text
-    document.getElementById("rotor-weight-text").textContent = model.rotorText;
-    
     // Update CTA banner description
-    document.getElementById("cta-banner-desc").textContent = model.bannerDesc;
+    const bannerDesc = document.getElementById("cta-banner-desc");
+    if (bannerDesc) bannerDesc.textContent = model.bannerDesc;
     
     // Update Modal options
     for (let i = 0; i < 4; i++) {
@@ -600,38 +506,7 @@ function switchWatchModel(key) {
     morphWatchTheme(0);
 }
  
-// 7. Complication Details Switcher
-function setupComplicationSwitcher() {
-    const boxes = document.querySelectorAll(".comp-box");
-    const balance = document.querySelector(".balance-wheel");
-    const gears = document.querySelectorAll(".gear");
- 
-    boxes.forEach(box => {
-        box.addEventListener("click", () => {
-            boxes.forEach(b => b.classList.remove("active"));
-            box.classList.add("active");
-            
-            const comp = box.getAttribute("data-comp");
-            
-            // Adjust SVG gear animation speeds depending on which complication is selected
-            if (comp === "flyback") { // Petite Tapisserie / Minute Repeater
-                balance.style.animationDuration = "0.8s";
-                gears[0].style.animationDuration = "6s";
-                gears[1].style.animationDuration = "4s";
-            } else if (comp === "dualtime") { // Caliber 7121 / Perpetual Calendar
-                balance.style.animationDuration = "2s";
-                gears[0].style.animationDuration = "20s";
-                gears[1].style.animationDuration = "15s";
-            } else { // Integrated Bracelet / Haute Joaillerie
-                balance.style.animationDuration = "0.2s";
-                gears[0].style.animationDuration = "2s";
-                gears[1].style.animationDuration = "1.5s";
-            }
-        });
-    });
-}
- 
-// 8. Inquiry Modal Controls
+// 7. Inquiry Modal Controls
 function setupInquiryModal() {
     const modal = document.getElementById("inquire-modal");
     const openTriggers = [
@@ -718,7 +593,7 @@ function setupInquiryModal() {
     }
 }
  
-// 9. Scroll Reveal Animations (IntersectionObserver)
+// 8. Scroll Reveal Animations (IntersectionObserver)
 function setupScrollReveal() {
     const reveals = document.querySelectorAll(".scroll-reveal");
     
