@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chronos Apex - Luxury Watch Showcase. Experience the legendary Audemars Piguet Royal Oak and Patek Philippe 5304/301R-001.">
-    <title>CHRONOS APEX | Premium Luxury Horology Showcase</title>
-    <!-- Google Fonts & Material Icons -->
+    <meta name="description" content="Patek Philippe Ref. 5304/301R-001 Showcase - Minute Repeater, Retrograde Perpetual Calendar, Haute Joaillerie.">
+    <title>PATEK PHILIPPE | Grand Complications Ref. 5304/301R-001</title>
+    <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,217 +13,210 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Luxury Background and spotlight cursor elements -->
-    <div class="aurora-bg" id="aurora-container">
-        <div class="aurora-sphere sphere-1"></div>
-        <div class="aurora-sphere sphere-2"></div>
-        <div class="aurora-sphere sphere-3"></div>
-    </div>
-    
-    <div class="spotlight-overlay" id="mouse-spotlight"></div>
- 
+    <!-- Luxury Spotlight Mouse Tracker -->
+    <div class="mouse-spotlight" id="global-spotlight"></div>
+
     <!-- Navigation Bar -->
-    <nav class="nav-bar" id="main-nav">
+    <nav class="nav-bar">
         <div class="nav-container">
             <a href="#" class="brand-logo">
-                <span class="logo-text">CHRONOS<span class="logo-accent">APEX</span></span>
+                <span class="brand-name">PATEK PHILIPPE</span>
+                <span class="brand-sub">GENEVE</span>
             </a>
             <div class="nav-links">
-                <a href="#hero" class="nav-link-item active">Showcase</a>
-                <a href="#specs" class="nav-link-item">Specifications</a>
+                <a href="#hero" class="nav-item active">Showcase</a>
+                <a href="#details" class="nav-item">Gallery</a>
+                <a href="#specs" class="nav-item">Specifications</a>
             </div>
             <div class="nav-actions">
-                <button class="inquire-btn" id="nav-inquire-trigger">
-                    <span>ALLOCATE WATCH</span>
+                <button class="cta-inquire-trigger nav-btn">
+                    <span>ACQUISITION</span>
                     <span class="material-symbols-rounded">gavel</span>
                 </button>
             </div>
         </div>
     </nav>
- 
-    <!-- Hero Section (Patek Philippe Grid Layout & Full-bleed background) -->
+
+    <!-- Full-Bleed Hero Section -->
     <section class="hero-section" id="hero">
-        <div class="hero-grid-background"></div>
-        
-        <!-- Full-bleed background image element -->
-        <div class="hero-bleed-image-wrap">
-            <img src="assets/watch_bleed_bg.jpg" alt="Luxury watch background" class="hero-bleed-bg-img">
+        <!-- Edge-to-edge background watch gears visual -->
+        <div class="hero-bleed-background">
+            <img src="assets/watch_bleed_bg.jpg" alt="Macro watch movement gears" class="hero-bleed-img">
+            <div class="hero-overlay-mask"></div>
         </div>
-        
-        <div class="hero-contents-wrapper">
-            <!-- Watch Selection Tabs at the top of the Showcase -->
-            <div class="watch-selection-container scroll-reveal">
-                <div class="watch-selection-tabs">
-                    <button class="watch-tab active" data-watch="ap">AP ROYAL OAK JUMBO</button>
-                    <button class="watch-tab" data-watch="patek">PATEK PHILIPPE Ref. 5304</button>
-                </div>
+
+        <div class="hero-content">
+            <!-- Giant Layered Display Typography Behind the Watch -->
+            <div class="giant-display-bg">5304/301R</div>
+
+            <!-- Centered Floating Watch Model -->
+            <div class="hero-watch-wrapper">
+                <img src="assets/patek_5304_front.jpg" alt="Patek Philippe Ref. 5304/301R-001" class="hero-watch-image floating-watch">
             </div>
-            
-            <div class="hero-container-patek">
-                <!-- Left Info Panel (Ref & Category) -->
-                <div class="patek-category-panel">
-                    <span class="patek-brand" id="watch-brand-label">AUDEMARS PIGUET</span>
-                    <span class="patek-category" id="watch-category-label">ROYAL OAK</span>
-                    <span class="patek-ref" id="watch-ref-label">16202ST.OO.1240ST.02</span>
-                </div>
-                
-                <!-- Left Column: Main Image Viewer with Amazon-style side Zoom -->
-                <div class="patek-display-panel">
-                    <div class="zoom-lens-container" id="zoom-container">
-                        <img src="assets/royal_oak_front.jpg" alt="Watch Showcase" class="main-watch-image" id="main-watch-img">
-                        <!-- Square indicator lens overlay -->
-                        <div class="zoom-lens-selector" id="zoom-lens"></div>
-                        
-                        <!-- Floating Zoom Preview Box (Amazon style) -->
-                        <div class="zoom-preview-window" id="zoom-preview">
-                            <img src="assets/royal_oak_front.jpg" id="zoom-preview-img" alt="Zoom Detail">
-                        </div>
-                    </div>
-                </div>
- 
-                <!-- Middle Column: Vertical Thumbnails Selector -->
-                <div class="patek-thumbnails-panel">
-                    <div class="thumbnail-list" id="thumbnail-container">
-                        <div class="thumbnail-item active" data-index="0" title="The Icon (Front)" id="thumb-0">
-                            <img src="assets/royal_oak_front.jpg" alt="Icon View">
-                        </div>
-                        <div class="thumbnail-item" data-index="1" title="The Craft (Angle)" id="thumb-1">
-                            <img src="assets/royal_oak_angle.jpg" alt="Angle View">
-                        </div>
-                        <div class="thumbnail-item" data-index="2" title="The Heart (Caliber)" id="thumb-2">
-                            <img src="assets/royal_oak_movement.jpg" alt="Movement View">
-                        </div>
-                        <div class="thumbnail-item" data-index="3" title="On Wrist (Fit)" id="thumb-3">
-                            <img src="assets/royal_oak_wrist.jpg" alt="Wrist View">
-                        </div>
-                    </div>
-                </div>
- 
-                <!-- Right Column: Product Specs & Details -->
-                <div class="patek-details-panel">
-                    <h1 class="patek-title" id="patek-watch-title">Royal Oak "Jumbo" Extra-Thin</h1>
-                    
-                    <!-- Brand Ref label replaces standard price tag -->
-                    <div class="patek-price-tag" id="patek-watch-price">AUDEMARS PIGUET <span class="price-suffix" id="patek-price-suffix">ROYAL OAK Ref. 16202ST</span></div>
-                    
-                    <p class="patek-description" id="patek-watch-desc">
-                        Celebrating a legacy of design. The Royal Oak 'Jumbo' Extra-Thin features the legendary 39mm stainless steel case, an ultra-flat profile, and the iconic octagonal bezel.
-                    </p>
- 
-                    <div class="patek-specs-highlights" id="patek-specs-highlights-rows">
-                        <div class="highlight-row">
-                            <span class="hl-label">Case Profile</span>
-                            <span class="hl-value">Stainless Steel, Glareproofed Sapphire</span>
-                        </div>
-                        <div class="highlight-row">
-                            <span class="hl-label">Dial Art</span>
-                            <span class="hl-value">"Bleu Nuit Nuage 50" Petite Tapisserie</span>
-                        </div>
-                        <div class="highlight-row">
-                            <span class="hl-label">Movement</span>
-                            <span class="hl-value" id="patek-caliber-stat">Caliber 7121 (Self-winding)</span>
-                        </div>
-                        <div class="highlight-row">
-                            <span class="hl-label">Thickness</span>
-                            <span class="hl-value">8.1 mm Ultra-Thin Casing</span>
-                        </div>
-                    </div>
- 
-                    <div class="patek-actions">
-                        <button class="btn btn-primary" id="hero-inquire-btn">
-                            <span>Request Allocation</span>
-                            <span class="material-symbols-rounded">arrow_right_alt</span>
-                        </button>
-                        <a href="#specs" class="btn btn-secondary">
-                            <span>Full Specifications</span>
-                        </a>
-                    </div>
+
+            <!-- Foreground Branding -->
+            <div class="hero-branding">
+                <span class="sub-title">GRAND COMPLICATIONS</span>
+                <h1>MINUTE REPEATER</h1>
+                <p class="hero-desc">
+                    Retrograde Perpetual Calendar. Haute Joaillerie. Set with 80 baguette diamonds.
+                </p>
+                <div class="hero-actions">
+                    <a href="#details" class="hero-scroll-btn">
+                        <span>EXPLORE CRAFTSMANSHIP</span>
+                        <span class="material-symbols-rounded">expand_more</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
- 
-    <!-- Technical Specs Section -->
-    <section class="specs-section" id="specs">
+
+    <!-- Bento Grid Showcase (Gallery + Specs) -->
+    <section class="bento-section" id="details">
         <div class="container">
-            <div class="grid-2">
-                <div class="specs-visual scroll-reveal">
-                    <div class="specs-glow-radial"></div>
-                    <img src="assets/royal_oak_front.jpg" alt="Watch Specs View" class="specs-detail-image" id="specs-image-swap">
+            <div class="section-title scroll-reveal">
+                <span class="gold-tag">THE ANATOMY</span>
+                <h2>HOROLOGICAL PERSPECTIVES</h2>
+                <p>An intricate look at Patek Philippe’s skeletonized masterpiece.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Card 1: Large Visual Showcase -->
+                <div class="bento-card card-large scroll-reveal">
+                    <div class="bento-card-glow"></div>
+                    <div class="card-inner">
+                        <span class="card-tag">THE DESIGN</span>
+                        <h3>Haute Joaillerie</h3>
+                        <p>Adorned with 80 baguette-cut diamonds (~6.22 ct) set on the bezel, slides, and lugs. The rose gold case sides feature white gold leaf engravings inlaid into the casing.</p>
+                        <div class="bento-img-wrap">
+                            <img src="assets/patek_5304_angle.jpg" alt="Patek 5304 Bezel Angle" class="bento-image">
+                        </div>
+                    </div>
                 </div>
-                <div class="specs-list-panel border-beam-card scroll-reveal">
-                    <!-- Magic UI Border Beam line elements -->
+
+                <!-- Card 2: Technical Metrics -->
+                <div class="bento-card scroll-reveal">
+                    <div class="bento-card-glow"></div>
+                    <div class="card-inner flex-center-content">
+                        <span class="card-tag">METRICS</span>
+                        <h3>Caliber R 27</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-box">
+                                <span class="metric-num">517</span>
+                                <span class="metric-lbl">Individual Parts</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-num">80</span>
+                                <span class="metric-lbl">Baguette Diamonds</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-num">48h</span>
+                                <span class="metric-lbl">Power Reserve</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: The Heart / Caliber -->
+                <div class="bento-card scroll-reveal">
+                    <div class="bento-card-glow"></div>
+                    <div class="card-inner">
+                        <span class="card-tag">THE CALIBER</span>
+                        <h3>Mechanical Heart</h3>
+                        <p>Open caseback showing the highly decorated caliber, gongs, hammers, and off-center gold rotor.</p>
+                        <div class="bento-img-wrap circle-img-wrap">
+                            <img src="assets/patek_5304_movement.jpg" alt="Caliber R 27 Caseback" class="bento-image rotate-slow">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Large Specifications Card with Magic UI Border Beam -->
+                <div class="bento-card card-large border-beam-card scroll-reveal" id="specs">
                     <div class="border-beam-line"></div>
-                    <span class="tagline-top">SPECIFICATIONS</span>
-                    <h2 id="specs-main-heading">TECHNICAL ATTRIBUTES</h2>
-                    <p class="specs-desc" id="specs-desc-paragraph">
-                        Meticulously engineered to balance a legendary design heritage with contemporary high-performance mechanical design.
-                    </p>
-                    
-                    <div class="specs-table" id="specs-table-rows">
-                        <div class="spec-row">
-                            <span class="spec-label">Reference Number</span>
-                            <span class="spec-value" id="spec-ref-no">16202ST.OO.1240ST.02</span>
+                    <div class="card-inner no-overflow">
+                        <span class="card-tag">TECHNICAL ATTRIBUTES</span>
+                        <h3>Specifications</h3>
+                        <div class="specs-table-bento">
+                            <div class="spec-row">
+                                <span class="spec-lbl">Reference Number</span>
+                                <span class="spec-val">5304/301R-001</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-lbl">Case Material</span>
+                                <span class="spec-val">18K Rose Gold with White Gold side inserts</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-lbl">Gemsetting</span>
+                                <span class="spec-val">80 Baguette Diamonds (~6.22 ct), 22 Baguette Diamonds on clasp (~0.97 ct)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-lbl">Dimensions</span>
+                                <span class="spec-val">43 mm Diameter, 13.3 mm Thickness</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-lbl">Caliber</span>
+                                <span class="spec-val">Caliber R 27 PS QR LU (Self-winding mechanical)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-lbl">Complications</span>
+                                <span class="spec-val">Minute Repeater, Retrograde Date, Perpetual Moon Phases, Leap Year</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-lbl">Strap</span>
+                                <span class="spec-val">Hand-stitched alligator leather with fold-over clasp</span>
+                            </div>
                         </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Case Materials</span>
-                            <span class="spec-value" id="spec-case-material">Stainless Steel, Glareproofed Sapphire Crystal</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Dimensions</span>
-                            <span class="spec-value" id="spec-dimensions">39 mm Diameter, 8.1 mm Thickness</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Caliber</span>
-                            <span class="spec-value" id="spec-caliber">Caliber 7121 (Self-winding)</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Complications</span>
-                            <span class="spec-value" id="spec-complications">Hours, Minutes, Date</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Strap/Bracelet</span>
-                            <span class="spec-value" id="spec-bracelet">Integrated Stainless Steel Bracelet with AP folding clasp</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Lifestyle Wrist Shot -->
+                <div class="bento-card scroll-reveal">
+                    <div class="bento-card-glow"></div>
+                    <div class="card-inner">
+                        <span class="card-tag">ON THE WRIST</span>
+                        <h3>Horological Presence</h3>
+                        <p>Assertive, highly decorated 43mm rose gold presence on the wrist.</p>
+                        <div class="bento-img-wrap">
+                            <img src="assets/patek_5304_wrist.jpg" alt="Patek 5304 on wrist" class="bento-image">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- 
-    <!-- Buy/Inquire CTA Section -->
+
+    <!-- Strong Buy/Inquire CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <div class="cta-banner scroll-reveal">
-                <div class="cta-glow"></div>
-                <div class="cta-content">
-                    <h2>BEGIN YOUR LEGACY</h2>
-                    <p id="cta-banner-desc">
-                        Allocations for this premium timepiece are highly limited. Secure your ticket for a private consultation, virtual showing, or regional allocation.
-                    </p>
-                    <div class="cta-buttons">
-                        <button class="btn btn-primary" id="cta-inquire-trigger">
-                            <span>Request Booking</span>
-                            <span class="material-symbols-rounded">confirmation_number</span>
-                        </button>
-                    </div>
+        <div class="cta-radial-glow"></div>
+        <div class="container scroll-reveal">
+            <div class="cta-card">
+                <span class="gold-tag">ACQUISITION DESK</span>
+                <h2>BEGIN YOUR LEGACY</h2>
+                <p>
+                    Allocations for this Grand Complication timepiece are extremely exclusive and reserved for collectors. Register your request for allocation.
+                </p>
+                <div class="cta-actions">
+                    <button class="cta-inquire-trigger cta-btn-gold">
+                        <span>REQUEST PRIVATE ALLOCATION</span>
+                        <span class="material-symbols-rounded">confirmation_number</span>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
- 
+
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container flex-between">
-            <p class="footer-logo">CHRONOS<span class="logo-accent">APEX</span></p>
-            <p>&copy; 2026 Chronos Apex S.A. All rights reserved. Designed by Antigravity.</p>
+            <p class="footer-logo">PATEK PHILIPPE <span class="gold-text">GENEVE</span></p>
+            <p>&copy; 2026 Patek Philippe S.A. Rebuilt in CSS. Private showcase. All rights reserved.</p>
             <div class="footer-socials">
-                <a href="#">Instagram</a>
-                <a href="#">Contact</a>
+                <a href="#">Showcases</a>
+                <a href="#">Contact Salon</a>
             </div>
         </div>
     </footer>
- 
+
     <!-- Inquiry Modal -->
     <div class="modal-overlay" id="inquire-modal">
         <div class="modal-container">
@@ -231,8 +224,8 @@
                 <span class="material-symbols-rounded">close</span>
             </button>
             <div class="modal-header">
-                <h2>ACQUISITION DESK</h2>
-                <p>Register your interest. Our consultants will contact you within 24 hours.</p>
+                <h2>REQUEST ALLOCATION</h2>
+                <p>Register your interest. Our advisors will contact you in private within 24 hours.</p>
             </div>
             
             <form id="inquiry-form" class="inquiry-form">
@@ -247,25 +240,22 @@
                     <span class="error-msg" id="email-error"></span>
                 </div>
                 <div class="form-group">
-                    <label for="client-watch">Perspective / Version of Interest</label>
+                    <label for="client-watch">Timepiece Reference</label>
                     <select id="client-watch">
-                        <option value="jumbo-icon" id="modal-opt-0">AP Royal Oak - The Icon (Front View)</option>
-                        <option value="jumbo-craft" id="modal-opt-1">AP Royal Oak - The Craft (Angle View)</option>
-                        <option value="jumbo-heart" id="modal-opt-2">AP Royal Oak - The Heart (Caliber 7121)</option>
-                        <option value="jumbo-wrist" id="modal-opt-3">AP Royal Oak - On Wrist (Wear view)</option>
+                        <option value="5304">Grand Complications Ref. 5304/301R-001</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="client-message">Special Requests / Casing preferences</label>
+                    <label for="client-message">Special Notes / Salon Location</label>
                     <textarea id="client-message" placeholder="Provide details regarding delivery location, engraving, or specific requests..."></textarea>
                 </div>
                 
-                <button type="submit" class="btn btn-primary btn-block">
-                    <span>TRANSMIT REQUISITION</span>
+                <button type="submit" class="cta-btn-gold block-btn">
+                    <span>TRANSMIT ALLOCATION REQUEST</span>
                     <span class="material-symbols-rounded">send</span>
                 </button>
             </form>
- 
+
             <!-- Success State -->
             <div class="success-state hidden" id="inquiry-success">
                 <div class="success-icon">
@@ -275,20 +265,20 @@
                 <p>Your allocation query has been logged. An advisor from our Private Client Office will reach out shortly.</p>
                 <div class="ticket-mock">
                     <div class="ticket-header">
-                        <h4>CHRONOS APEX</h4>
-                        <span class="ticket-badge">VIP INQUIRY</span>
+                        <h4>PATEK PHILIPPE</h4>
+                        <span class="ticket-badge">VIP ALLOCATION</span>
                     </div>
                     <div class="ticket-body">
                         <p class="ticket-name" id="ticket-client-name">Girish Naik</p>
-                        <p class="ticket-watch-model" id="ticket-watch-model">Royal Oak Jumbo - The Icon (Front View)</p>
-                        <p class="ticket-code" id="ticket-reference-id">REF-APEX-99812-G</p>
+                        <p class="ticket-watch-model">Grand Complications Ref. 5304/301R-001</p>
+                        <p class="ticket-code" id="ticket-reference-id">REF-PATEK-9908-G</p>
                     </div>
                 </div>
-                <button class="btn btn-secondary btn-block" id="close-success-btn">Return to Salon</button>
+                <button class="nav-btn block-btn" id="close-success-btn">Return to Salon</button>
             </div>
         </div>
     </div>
- 
+
     <script src="script.js"></script>
 </body>
 </html>
