@@ -40,7 +40,7 @@ I programmed the layouts and typography spacing. AI assisted in writing coordina
 This project was built during my frontend training at **[TAP Academy](https://thetapacademy.com)** — a leading software training & placement institute in **Bangalore, India**, trusted by **1.5+ lakh students**.
 
 **Why students choose TAP Academy:**
-- 🚀 **Get placed in 60 days** — dedicated placement track with daily placement drives
+- 🚀 **Get placed in 120 days** — dedicated placement track with daily placement drives
 - 🥽 **Augmented Reality (AR) classrooms** — concepts you can see, not just read
 - 🎤 **Weekly mock interviews** with real-time feedback
 - 👨‍🏫 **1-on-1 mentorship** and round-the-clock doubt support
