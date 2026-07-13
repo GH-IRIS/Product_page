@@ -1,137 +1,128 @@
-// Chronos Apex - Luxury Watch Collection Showcase
- 
-// 1. Curated Local Watch Database with unique themes
+// Chronos Apex - Haute Horlogerie Watch Showcase Controller
+
+// 1. Core Multi-Watch Database (4 Premium Transparent Masterpieces)
 const watchDatabase = {
-    patek: {
-        brand: "PATEK PHILIPPE",
-        category: "GRAND COMPLICATIONS",
-        ref: "Ref. 5308G-001",
-        title: "Perpetual Split-Seconds Chronograph",
-        desc: "A mechanical masterpiece. The Ref. 5308G-001 combines a self-winding minute repeater, a split-seconds chronograph, and an instantaneous perpetual calendar cased in 18K white gold.",
-        image: "assets/Ref_5308g.png",
-        giantText: "5308G",
-        theme: {
-            accent: "#c5a880", /* Warm Bronze Gold */
-            glow: "rgba(197, 168, 128, 0.15)",
-            background: "#08080a"
-        },
-        metrics: [
-            { num: "799", label: "Individual Parts" },
-            { num: "48h", label: "Power Reserve" },
-            { num: "63", label: "Jewels" }
-        ],
-        details: {
-            designTag: "THE CALIBER",
-            designTitle: "R CH 27 PS QI Movement",
-            designDesc: "This self-winding movement is a technical tour de force, integrating a repeater, monopusher chronograph, split-seconds, and perpetual calendar wheels.",
-            designImage: "assets/desktop-edifice-night-time.avif",
-            
-            caliberTag: "CRAFTSMANSHIP",
-            caliberTitle: "Instantaneous Perpetual Calendar",
-            caliberDesc: "All calendar displays jump simultaneously and instantaneously at midnight in a fraction of a second, driven by a patented system of levers.",
-            caliberImage: "assets/desktop-edifice-windflow.avif"
-        },
-        specs: [
-            { lbl: "Reference Number", val: "5308G-001" },
-            { lbl: "Case Material", val: "18K White Gold, interchangeable sapphire back" },
-            { lbl: "Dimensions", val: "42 mm Diameter, 17.7 mm Thickness" },
-            { lbl: "Caliber", val: "Caliber R CH 27 PS QI (Self-winding)" },
-            { lbl: "Complications", val: "Minute Repeater, Split-seconds Chronograph, Instantaneous Perpetual Calendar" },
-            { lbl: "Strap", val: "Hand-stitched alligator leather with fold-over clasp" }
-        ]
-    },
-    seiko: {
+    seiko_astron: {
         brand: "SEIKO ASTRON",
-        category: "GPS SOLAR",
-        ref: "Ref. HAB004J1",
-        title: "Titanium Astron 145th Anniversary",
+        ref: "Ref. SSH175J1",
+        title: "Titanium Astron GPS Solar",
         desc: "High-tech celestial precision. Driven by Seiko's GPS Solar caliber, it connects to the GPS network to adjust automatically to your local time zone anywhere on Earth.",
-        image: "assets/HAB004J1.webp",
+        image: "assets/seiko_astron_1.png",
         giantText: "ASTRON",
         theme: {
-            accent: "#4a89ff", /* Cobalt Blue */
-            glow: "rgba(74, 137, 255, 0.15)",
-            background: "#05070d"
+            accent: "#4a89ff", // Cobalt Blue
+            accentBronze: "#79a2e8",
+            glow: "rgba(74, 137, 255, 0.08)",
+            background: "#05070d",
+            craftBackground: "#070b14"
         },
-        metrics: [
-            { num: "GPS", label: "Time Adjustment" },
-            { num: "Solar", label: "Infinite Charging" },
-            { num: "Ti", label: "Super-Hard Titanium" }
-        ],
-        details: {
-            designTag: "THE HOUSING",
-            designTitle: "145th Anniversary Edition",
-            designDesc: "Cased in super-hard titanium with a blue theme faceted bezel, this limited edition Astron pays tribute to 145 years of Seiko engineering.",
-            designImage: "assets/HAB006J1.webp",
-            
-            caliberTag: "THE CALIBER",
-            caliberTitle: "GPS Solar 5X53 Caliber",
-            caliberDesc: "Receives GPS signals to adjust time, DST, and calendar with high precision, drawing power from any light source.",
-            caliberImage: "assets/HAB004J1.webp"
+        craft: {
+            highlight: "Unparalleled satellite time keeping synchronized from outer space.",
+            desc: "Seiko's 5X53 GPS Solar movement connects to GPS satellites to calibrate timezone, date, and time variables automatically. Powered by light, it never needs a battery replacement.",
+            title: "Astron 5X53 GPS Caliber",
+            specs: "Solar quartz module, timezone sync"
         },
         specs: [
-            { lbl: "Reference Number", val: "HAB004J1" },
-            { lbl: "Case Material", val: "Titanium case with super-hard coating" },
-            { lbl: "Glass Casing", val: "Dual-curved sapphire crystal with super-clear coating" },
-            { lbl: "Dimensions", val: "42.7 mm Diameter, 12.2 mm Thickness" },
-            { lbl: "Caliber", val: "Caliber 5X53 GPS Solar Dual-Time" },
+            { lbl: "Reference Number", val: "Ref. SSH175J1" },
+            { lbl: "Caliber Movement", val: "Caliber 5X53 GPS Solar Dual-Time" },
             { lbl: "Accuracy", val: "±15 seconds per month (without GPS signal)" },
+            { lbl: "Case Material", val: "Titanium case with super-hard coating" },
+            { lbl: "Dimensions", val: "42.7 mm Diameter, 12.2 mm Thickness" },
             { lbl: "Water Resistance", val: "10 bar (100 meters)" }
+        ],
+        gallery: [
+            { img: "assets/seiko_astron_1.png", caption: "Dial View — Titanium casing with faceted bezel", isTransparent: true },
+            { img: "assets/seiko_astron_2.png", caption: "Profile View — Lightweight titanium case profile", isTransparent: true },
+            { img: "assets/seiko_astron_3.png", caption: "Solar Dial Detail — Light energy absorption panel", isTransparent: true },
+            { img: "assets/seiko_astron_4.png", caption: "Wrist Presence — Breathtaking comfort and legibility", isTransparent: true }
         ]
     },
-    casio: {
-        brand: "CASIO ROYALE",
-        category: "DIGITAL CHRONO",
-        ref: "AE-1200WHD-1AV",
-        title: "World Time Digital Legend",
-        desc: "The retro-modern digital classic. Featuring a world map time display, 10-year battery life, multi-alarm system, and a robust steel-link bracelet.",
-        image: "assets/AE-1200WHD-1AV.avif",
-        giantText: "AE-1200",
+    patek_5304: {
+        brand: "PATEK PHILIPPE",
+        ref: "Ref. 5304R-001",
+        title: "Grand Complications Skeleton",
+        desc: "A breathtaking skeletonized masterwork. Features a minute repeater and a retrograde perpetual calendar, housed in a polished rose gold case.",
+        image: "assets/patek_5304_angle.jpg",
+        giantText: "PATEK",
         theme: {
-            accent: "#00e676", /* Digital Green */
-            glow: "rgba(0, 230, 118, 0.15)",
-            background: "#060907"
+            accent: "#c5a880", // Warm Bronze Gold
+            accentBronze: "#d9c09c",
+            glow: "rgba(197, 168, 128, 0.08)",
+            background: "#050507",
+            craftBackground: "#08080b"
         },
-        metrics: [
-            { num: "10y", label: "Battery Life" },
-            { num: "100m", label: "Water Resistant" },
-            { num: "LC", label: "Analog Dial Simulation" }
-        ],
-        details: {
-            designTag: "THE DESIGN",
-            designTitle: "World Time Map Dashboard",
-            designDesc: "The legendary digital layout features a micro world map highlighting active time zones and a circular LCD displaying simulated analog hands.",
-            designImage: "assets/AE-1200WHD-1AV.avif",
-            
-            caliberTag: "FUNCTIONS",
-            caliberTitle: "Multifunctional Module 3299",
-            caliberDesc: "Equipped with 1/100-second chronograph, world time in 48 cities, 5 daily alarms, and LED backlight with afterglow.",
-            caliberImage: "assets/AE-1200WHD-1AV.avif"
+        craft: {
+            highlight: "Meticulous openworked dial showing the gear train.",
+            desc: "The retrograde date hand sweeps along a 270-degree arc before jumping back to the start. The sapphire dial reveals the complex repeater hammers and calendar mechanism.",
+            title: "Caliber R TO 27 PS QR",
+            specs: "Manual winding, 517 individual parts"
         },
         specs: [
-            { lbl: "Reference Number", val: "AE-1200WHD-1AV" },
-            { lbl: "Case / Bezel", val: "Resin bezel cased with stainless steel bracelet" },
-            { lbl: "Battery Life", val: "Approx. 10 years on CR2025" },
-            { lbl: "Dimensions", val: "45.0 x 42.1 x 12.5 mm" },
-            { lbl: "Module Number", val: "3299 Quartz Module" },
-            { lbl: "Timekeeping", val: "World Time (48 cities), 4 Home City presets" },
-            { lbl: "Water Resistance", val: "100 meters (10 bar)" }
+            { lbl: "Reference Number", val: "Ref. 5304R-001" },
+            { lbl: "Caliber Movement", val: "Caliber R TO 27 PS QR" },
+            { lbl: "Complications", val: "Minute Repeater, Retrograde Perpetual Calendar" },
+            { lbl: "Case Composition", val: "18K Rose Gold with white gold insert details" },
+            { lbl: "Dimensions", val: "43 mm Diameter, 13.3 mm Thickness" },
+            { lbl: "Strap & Clasp", val: "Hand-stitched alligator leather, fold-over clasp" }
+        ],
+        gallery: [
+            { img: "assets/patek_5304_angle.jpg", caption: "Dial View — Rose gold skeletonized complication dial", isTransparent: false },
+            { img: "assets/patek_5304_movement.jpg", caption: "Caliber View — Hand-finished micro-rotor movement", isTransparent: false },
+            { img: "assets/patek_5304_wrist.jpg", caption: "Wrist Presence — Unrivaled size and wrist presence", isTransparent: false },
+            { img: "assets/patek_5304_angle.jpg", caption: "Dial Details — Exquisite openworked design", isTransparent: false }
+        ]
+    },
+    royal_oak: {
+        brand: "AUDEMARS PIGUET",
+        ref: "Ref. 16202ST",
+        title: "Royal Oak Jumbo Extra-Thin",
+        desc: "The quintessential luxury sports watch. Designed by Gérald Genta, featuring the famous octagonal bezel, tapisserie dial, and integrated steel bracelet.",
+        image: "assets/royal_oak_front.jpg",
+        giantText: "ROYAL OAK",
+        theme: {
+            accent: "#cbd5e1", // Platinum Silver
+            accentBronze: "#cbd5e1",
+            glow: "rgba(226, 232, 240, 0.08)",
+            background: "#070709",
+            craftBackground: "#0a0a0d"
+        },
+        craft: {
+            highlight: "Ultra-thin mechanical movement measuring just 3.2 mm.",
+            desc: "The caliber 7121 replaced the legendary 2121. It features a larger barrel for a longer power reserve, bidirectional winding, and bridges decorated with Côtes de Genève.",
+            title: "Caliber 7121 Extra-Thin",
+            specs: "Self-winding caliber, 268 components"
+        },
+        specs: [
+            { lbl: "Reference Number", val: "Ref. 16202ST.OO.1240ST.02" },
+            { lbl: "Caliber Movement", val: "Caliber 7121 self-winding movement" },
+            { lbl: "Power Reserve", val: "55 hours dynamic reserve" },
+            { lbl: "Case & Bracelet", val: "Satin-brushed stainless steel with hand-polished bevels" },
+            { lbl: "Dimensions", val: "39 mm Diameter, 8.1 mm Case thickness" },
+            { lbl: "Water Resistance", val: "50 meters (5 bar)" }
+        ],
+        gallery: [
+            { img: "assets/royal_oak_front.jpg", caption: "Dial View — Iconic Bleu Nuit Nuage 50 Tapisserie dial", isTransparent: false },
+            { img: "assets/royal_oak_angle.jpg", caption: "Case Profile — Integrated bracelet and octagonal bezel", isTransparent: false },
+            { img: "assets/royal_oak_movement.jpg", caption: "Caliber 7121 — Extra-thin self-winding mechanical caliber", isTransparent: false },
+            { img: "assets/royal_oak_front.jpg", caption: "Details — Hand-polished bevels and satin-brushed surfaces", isTransparent: false }
         ]
     }
 };
- 
-let currentModelKey = "patek";
- 
-// 2. Controller Initialization
+
+let currentWatchKey = "seiko_astron";
+
 window.addEventListener("DOMContentLoaded", () => {
     setupSpotlight();
-    setupBentoGlow();
-    setupInquiryModal();
+    setupScrollTracing();
+    setupParallax();
+    setupGalleryListeners();
     setupScrollReveal();
-    setupWatchSelector();
+    setupNavigationHighlight();
+    setupInquiryModal();
+    setupWatchTabs();
 });
- 
-// 3. Aceternity-style Spotlight Effect (Mouse coordinates tracking)
+
+// 2. Mouse Spotlight Ambient Glow coordinates tracking
 function setupSpotlight() {
     const spotlight = document.getElementById("global-spotlight");
     if (!spotlight) return;
@@ -144,115 +135,268 @@ function setupSpotlight() {
         spotlight.style.setProperty("--mouse-y", `${yPct}%`);
     });
 }
- 
-// 4. Magic UI Bento Card Spotlights Cursor Hover Light
-function setupBentoGlow() {
-    const cards = document.querySelectorAll(".bento-card");
+
+// 3. Scroll Tracing Progress Beam
+function setupScrollTracing() {
+    const tracingLine = document.getElementById("scroll-tracing-line");
+    const tracingDot = document.getElementById("scroll-tracing-dot");
     
-    cards.forEach(card => {
-        card.addEventListener("mousemove", (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    function updateProgress() {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) return;
+        
+        const scrollPct = (window.scrollY / docHeight) * 100;
+        
+        // Update CSS Custom Variable
+        document.documentElement.style.setProperty("--scroll-pct", `${scrollPct}%`);
+    }
+    
+    window.addEventListener("scroll", updateProgress);
+    window.addEventListener("resize", updateProgress);
+    updateProgress(); // Initial run
+}
+
+// 4. Parallax Image Scrolling (Editorial Style)
+function setupParallax() {
+    const caliberImg = document.getElementById("craft-caliber-img");
+    if (!caliberImg) return;
+    
+    function handleParallax() {
+        const rect = caliberImg.parentElement.getBoundingClientRect();
+        const viewHeight = window.innerHeight;
+        
+        // Only calculate parallax if the image element wrapper is in viewport
+        if (rect.top < viewHeight && rect.bottom > 0) {
+            // Translate the scroll delta into a smaller offset
+            const scrollDelta = viewHeight - rect.top;
+            const translateY = scrollDelta * 0.06; // Adjust factor for parallax intensity
             
-            card.style.setProperty("--mouse-x", `${x}px`);
-            card.style.setProperty("--mouse-y", `${y}px`);
+            caliberImg.style.transform = `translateY(${translateY}px)`;
+        }
+    }
+    
+    window.addEventListener("scroll", handleParallax);
+    handleParallax(); // Initial run
+}
+
+// 5. Interactive Gallery Thumbnail Switching (With container and background blending)
+function setupGalleryListeners() {
+    const mainImg = document.getElementById("main-gallery-img");
+    const captionText = document.getElementById("gallery-caption-text");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+    const viewerInner = document.querySelector(".viewer-inner");
+    
+    if (!mainImg || thumbnails.length === 0 || !viewerInner) return;
+    
+    thumbnails.forEach(thumb => {
+        thumb.addEventListener("click", () => {
+            if (thumb.classList.contains("active")) return;
+            
+            // Toggle active state
+            thumbnails.forEach(t => t.classList.remove("active"));
+            thumb.classList.add("active");
+            
+            const newSrc = thumb.getAttribute("data-img");
+            const newCaption = thumb.getAttribute("data-caption");
+            const isTransparent = thumb.getAttribute("data-transparent") === "true";
+            
+            // Elegant Fade Out Transition
+            mainImg.style.opacity = 0;
+            mainImg.style.transform = "scale(0.98)";
+            
+            setTimeout(() => {
+                // Change properties
+                mainImg.src = newSrc;
+                if (captionText) captionText.textContent = newCaption;
+                
+                // Toggle contain-mode for transparent PNGs/WebPs
+                if (isTransparent) {
+                    mainImg.classList.add("contain-mode");
+                } else {
+                    mainImg.classList.remove("contain-mode");
+                }
+                
+                // Fade In
+                setTimeout(() => {
+                    mainImg.style.opacity = 1;
+                    mainImg.style.transform = "scale(1)";
+                }, 50);
+                
+            }, 300);
         });
     });
 }
- 
-// 5. Watch Selector Tab Handler
-function setupWatchSelector() {
+
+// 6. Scroll Reveal Intersection Observer (Slide up and fade-in)
+function setupScrollReveal() {
+    const reveals = document.querySelectorAll(".scroll-reveal");
+    if (reveals.length === 0) return;
+    
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -60px 0px"
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Trigger once
+            }
+        });
+    }, observerOptions);
+    
+    reveals.forEach(el => observer.observe(el));
+}
+
+// 7. Navigation Link Highlight on Scroll
+function setupNavigationHighlight() {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll(".nav-item");
+    
+    function highlightLink() {
+        let activeId = "";
+        const scrollPos = window.scrollY + 200; // offset for nav height
+        
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.clientHeight;
+            
+            if (scrollPos >= top && scrollPos < top + height) {
+                activeId = section.getAttribute("id");
+            }
+        });
+        
+        if (activeId) {
+            navItems.forEach(item => {
+                item.classList.remove("active");
+                if (item.getAttribute("href").slice(1) === activeId) {
+                    item.classList.add("active");
+                }
+            });
+        }
+    }
+    
+    window.addEventListener("scroll", highlightLink);
+    highlightLink(); // Initial run
+}
+
+// 8. Watch Selector Switcher (Hero Tabs Handler)
+function setupWatchTabs() {
     const tabs = document.querySelectorAll(".watch-tab");
     
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
             const watchKey = tab.getAttribute("data-watch");
-            if (watchKey === currentModelKey) return;
+            if (watchKey === currentWatchKey) return;
             
             tabs.forEach(t => t.classList.remove("active"));
             tab.classList.add("active");
             
-            switchWatchModel(watchKey);
+            switchWatch(watchKey);
         });
     });
 }
- 
-// Dynamic switcher for the entire page contents and styling
-function switchWatchModel(key) {
-    currentModelKey = key;
+
+// Rebuilds page parameters, updates colors, and triggers smooth crossfades
+function switchWatch(key) {
+    currentWatchKey = key;
     const model = watchDatabase[key];
     
-    // 1. Elements to transition (Fade out)
-    const displayBgText = document.getElementById("hero-display-bg-text");
-    const watchImg = document.getElementById("hero-watch-img-el");
+    // Find all transitioning DOM nodes
+    const displayBgText = document.getElementById("gallery-display-bg-text");
     const brandTag = document.getElementById("hero-brand-tag");
     const watchTitle = document.getElementById("hero-watch-title");
     const watchDesc = document.getElementById("hero-watch-desc");
     
-    const b1Tag = document.getElementById("bento-1-tag");
-    const b1Title = document.getElementById("bento-1-title");
-    const b1Desc = document.getElementById("bento-1-desc");
-    const b1Img = document.getElementById("bento-1-img");
+    const craftHighlight = document.getElementById("craftsmanship-highlight");
+    const craftDesc = document.getElementById("craftsmanship-desc");
+    const craftImg = document.getElementById("craft-caliber-img");
+    const craftTitle = document.getElementById("craft-caliber-title");
+    const craftSpecs = document.getElementById("craft-caliber-specs");
     
-    const metricsTitle = document.getElementById("bento-metrics-title");
-    const metricsContainer = document.getElementById("metrics-items-container");
+    const mainGalleryImg = document.getElementById("main-gallery-img");
+    const galleryCaption = document.getElementById("gallery-caption-text");
+    const galleryThumbsContainer = document.getElementById("gallery-thumbs-container");
     
-    const b3Tag = document.getElementById("bento-3-tag");
-    const b3Title = document.getElementById("bento-3-title");
-    const b3Desc = document.getElementById("bento-3-desc");
-    const b3Img = document.getElementById("bento-3-img");
+    const specsTableContainer = document.getElementById("specs-table-container");
     
-    const specsTable = document.getElementById("bento-specs-rows");
-    const b5Img = document.getElementById("bento-5-img");
- 
-    // Add transitioning class for smooth animation
-    const elementsToFade = [displayBgText, watchImg, brandTag, watchTitle, watchDesc, b1Tag, b1Title, b1Desc, b1Img, metricsTitle, metricsContainer, b3Tag, b3Title, b3Desc, b3Img, specsTable, b5Img];
+    // Group elements to trigger a visual crossfade
+    const elementsToFade = [
+        displayBgText, brandTag, watchTitle, watchDesc,
+        craftHighlight, craftDesc, craftImg, craftTitle, craftSpecs,
+        mainGalleryImg, galleryCaption, specsTableContainer
+    ];
     
+    // 1. Fade out
     elementsToFade.forEach(el => {
         if (el) el.style.opacity = 0;
     });
     
+    // 2. Perform swap after fade completion
     setTimeout(() => {
-        // Swap CSS root variables for shifting gradients and theme colors
+        // Swap CSS root variables for shifting colors smoothly
         const root = document.documentElement;
         root.style.setProperty("--accent-color", model.theme.accent);
+        root.style.setProperty("--accent-bronze", model.theme.accentBronze);
         root.style.setProperty("--accent-glow", model.theme.glow);
         root.style.setProperty("--bg-dark", model.theme.background);
         
-        // Update Hero Panel
-        if (displayBgText) displayBgText.textContent = model.giantText;
-        if (watchImg) watchImg.src = model.image;
+        const craftSec = document.getElementById("craftsmanship");
+        if (craftSec) craftSec.style.backgroundColor = model.theme.craftBackground;
+        
+        // Update Specifications Header
         if (brandTag) brandTag.textContent = model.brand;
         if (watchTitle) watchTitle.textContent = model.title;
         if (watchDesc) watchDesc.textContent = model.desc;
         
-        // Update Bento Card 1 (Large Visual)
-        if (b1Tag) b1Tag.textContent = model.details.designTag;
-        if (b1Title) b1Title.textContent = model.details.designTitle;
-        if (b1Desc) b1Desc.textContent = model.details.designDesc;
-        if (b1Img) b1Img.src = model.details.designImage;
+        // Update Craftsmanship Details
+        if (craftHighlight) craftHighlight.textContent = model.craft.highlight;
+        if (craftDesc) craftDesc.textContent = model.craft.desc;
         
-        // Update Bento Card 2 (Metrics)
-        if (metricsTitle) metricsTitle.textContent = model.ref;
-        if (metricsContainer && model.metrics) {
-            metricsContainer.innerHTML = model.metrics.map(m => `
-                <div class="metric-box">
-                    <span class="metric-num">${m.num}</span>
-                    <span class="metric-lbl">${m.label}</span>
+        // Pick caliber parallax background
+        if (craftImg) {
+            if (key === "seiko_astron") {
+                craftImg.src = "assets/seiko_astron_5.png";
+            } else if (key === "patek_5304") {
+                craftImg.src = "assets/patek_5304_movement.jpg";
+            } else if (key === "royal_oak") {
+                craftImg.src = "assets/royal_oak_movement.jpg";
+            }
+        }
+        if (craftTitle) craftTitle.textContent = model.craft.title;
+        if (craftSpecs) craftSpecs.textContent = model.craft.specs;
+        
+        // Rebuild Gallery Main Image
+        if (mainGalleryImg) {
+            mainGalleryImg.src = model.gallery[0].img;
+            
+            // Transparent PNG/WebP starts with contain-mode
+            if (model.gallery[0].isTransparent) {
+                mainGalleryImg.classList.add("contain-mode");
+            } else {
+                mainGalleryImg.classList.remove("contain-mode");
+            }
+        }
+        if (galleryCaption) galleryCaption.textContent = model.gallery[0].caption;
+        if (displayBgText) displayBgText.textContent = model.giantText;
+        
+        // Rebuild Thumbnails
+        if (galleryThumbsContainer && model.gallery) {
+            galleryThumbsContainer.innerHTML = model.gallery.map((g, idx) => `
+                <div class="thumbnail ${idx === 0 ? 'active' : ''}" data-img="${g.img}" data-caption="${g.caption}" data-transparent="${g.isTransparent}">
+                    <img src="${g.img}" alt="Thumbnail View">
                 </div>
             `).join("");
+            
+            // Re-attach event listeners to the fresh thumbnails
+            setupGalleryListeners();
         }
         
-        // Update Bento Card 3 (Movement / Mechanics)
-        if (b3Tag) b3Tag.textContent = model.details.caliberTag;
-        if (b3Title) b3Title.textContent = model.details.caliberTitle;
-        if (b3Desc) b3Desc.textContent = model.details.caliberDesc;
-        if (b3Img) b3Img.src = model.details.caliberImage;
-        
-        // Update Bento Card 4 (Specs Table)
-        if (specsTable && model.specs) {
-            specsTable.innerHTML = model.specs.map(s => `
+        // Rebuild Specs Table
+        if (specsTableContainer && model.specs) {
+            specsTableContainer.innerHTML = model.specs.map(s => `
                 <div class="spec-row">
                     <span class="spec-lbl">${s.lbl}</span>
                     <span class="spec-val">${s.val}</span>
@@ -260,10 +404,7 @@ function switchWatchModel(key) {
             `).join("");
         }
         
-        // Update Bento Card 5 (Lifestyle / Wrist shot)
-        if (b5Img) b5Img.src = model.image;
- 
-        // Fade back in
+        // 3. Fade back in
         setTimeout(() => {
             elementsToFade.forEach(el => {
                 if (el) el.style.opacity = 1;
@@ -272,63 +413,60 @@ function switchWatchModel(key) {
         
     }, 400);
 }
- 
-// 6. Inquiry Modal Operations
+
+// 9. Private Allocation Consultation Modal Desk
 function setupInquiryModal() {
     const modal = document.getElementById("inquire-modal");
-    const openTriggers = document.querySelectorAll(".cta-inquire-trigger");
+    const openBtns = document.querySelectorAll(".cta-inquire-trigger");
     const closeBtn = document.getElementById("close-inquire-modal");
     const closeSuccessBtn = document.getElementById("close-success-btn");
- 
+    const form = document.getElementById("inquiry-form");
+    const successState = document.getElementById("inquiry-success");
+    const modalHeader = document.getElementById("modal-header-section");
+    
+    if (!modal) return;
+    
     function openModal() {
         modal.classList.add("active");
-        
-        // Auto-select watch currently on hero
-        const selectEl = document.getElementById("client-watch");
-        if (selectEl) {
-            if (currentModelKey === "patek") selectEl.selectedIndex = 0;
-            else if (currentModelKey === "seiko") selectEl.selectedIndex = 1;
-            else if (currentModelKey === "casio") selectEl.selectedIndex = 2;
-        }
-        
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden"; // disable background scrolling
     }
- 
+    
     function closeModal() {
         modal.classList.remove("active");
-        document.body.style.overflow = "";
+        document.body.style.overflow = ""; // restore scrolling
         
+        // Reset form states after fade out transition completes
         setTimeout(() => {
-            document.getElementById("inquiry-form").classList.remove("hidden");
-            document.getElementById("inquiry-success").classList.add("hidden");
-            document.getElementById("inquiry-form").reset();
-        }, 300);
+            if (form) {
+                form.classList.remove("hidden");
+                form.reset();
+            }
+            if (successState) successState.classList.add("hidden");
+            if (modalHeader) modalHeader.classList.remove("hidden");
+            document.querySelectorAll(".error-msg").forEach(span => span.textContent = "");
+        }, 400);
     }
- 
-    openTriggers.forEach(btn => {
-        if (btn) btn.addEventListener("click", openModal);
-    });
- 
+    
+    openBtns.forEach(btn => btn.addEventListener("click", openModal));
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
     if (closeSuccessBtn) closeSuccessBtn.addEventListener("click", closeModal);
- 
+    
     modal.addEventListener("click", (e) => {
         if (e.target === modal) closeModal();
     });
- 
-    // Form Submission & Ticket Population
-    const form = document.getElementById("inquiry-form");
+    
+    // Form validation and VIP ticket creation
     if (form) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
             
-            // Clear errors
+            // Clear current errors
             document.querySelectorAll(".error-msg").forEach(span => span.textContent = "");
             
             const name = document.getElementById("client-name").value.trim();
             const email = document.getElementById("client-email").value.trim();
-            const selectEl = document.getElementById("client-watch");
-            const watchModelName = selectEl.options[selectEl.selectedIndex].text;
+            const salonSelect = document.getElementById("client-salon");
+            const salonName = salonSelect.options[salonSelect.selectedIndex].text;
             
             let isValid = true;
             
@@ -343,40 +481,22 @@ function setupInquiryModal() {
             }
             
             if (isValid) {
-                // Populate Success Ticket details
+                // Populate Success VIP Ticket details
+                const model = watchDatabase[currentWatchKey];
+                
                 document.getElementById("ticket-client-name").textContent = name;
-                document.getElementById("ticket-success-model").textContent = watchModelName;
+                document.getElementById("ticket-salon-location").textContent = salonName;
+                document.getElementById("ticket-success-model").textContent = `${model.brand} ${model.ref}`;
                 
+                // Create unique allocation requisition code
                 const randomRef = Math.floor(1000 + Math.random() * 9000);
-                document.getElementById("ticket-reference-id").textContent = `REF-CHRONOS-${randomRef}-G`;
+                document.getElementById("ticket-reference-id").textContent = `REF-${currentWatchKey.toUpperCase()}-${randomRef}`;
                 
+                // Transition to success state
                 form.classList.add("hidden");
-                document.getElementById("inquiry-success").classList.remove("hidden");
+                if (modalHeader) modalHeader.classList.add("hidden");
+                if (successState) successState.classList.remove("hidden");
             }
         });
     }
-}
- 
-// 7. Scroll Reveal Animations (IntersectionObserver)
-function setupScrollReveal() {
-    const reveals = document.querySelectorAll(".scroll-reveal");
-    
-    const observerOptions = {
-        root: null,
-        threshold: 0.08,
-        rootMargin: "0px 0px -40px 0px"
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    reveals.forEach(el => {
-        observer.observe(el);
-    });
 }

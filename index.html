@@ -3,75 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chronos Apex - Premium Luxury Watch Collection. Featuring Patek Philippe 5308G, Seiko Astron, and Casio Royale.">
-    <title>CHRONOS APEX | Premium Luxury Horology Showcase</title>
-    <!-- Google Fonts & Icons -->
+    <meta name="description" content="Chronos Apex - Premium Luxury Timepieces Showcase. Experience the ultimate collection of GPS Solar, Perpetual Chronographs, and Skeletonized Repeater watches.">
+    <title>CHRONOS APEX | Haute Horlogerie Showcase</title>
+    <!-- Google Fonts & Material Symbols -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Luxury Spotlight Mouse Tracker -->
+
+    <!-- Aceternity Scroll Tracing Beam (Fixed Left-Side Progress Indicator) -->
+    <div class="scroll-tracing-beam">
+        <div class="tracing-line" id="scroll-tracing-line"></div>
+        <div class="tracing-dot" id="scroll-tracing-dot"></div>
+    </div>
+
+    <!-- Mouse Tracking Global Ambient Spotlight -->
     <div class="mouse-spotlight" id="global-spotlight"></div>
 
-    <!-- Navigation Bar -->
-    <nav class="nav-bar">
+    <!-- Navigation Header -->
+    <header class="nav-bar">
         <div class="nav-container">
+            <div class="nav-left">
+                <span class="nav-brand-title">CHRONOS</span>
+            </div>
             <a href="#" class="brand-logo">
-                <span class="brand-name">CHRONOS<span class="logo-accent">APEX</span></span>
+                <span class="brand-name">CHRONOS APEX</span>
+                <span class="brand-sub">HAUTE HORLOGERIE</span>
             </a>
-            <div class="nav-links">
+            <nav class="nav-links">
                 <a href="#hero" class="nav-item active">Showcase</a>
-                <a href="#details" class="nav-item">Gallery</a>
-                <a href="#specs" class="nav-item">Specifications</a>
-            </div>
-            <div class="nav-actions">
-                <button class="cta-inquire-trigger nav-btn">
-                    <span>ACQUISITION</span>
-                    <span class="material-symbols-rounded">gavel</span>
-                </button>
-            </div>
+                <a href="#product-section" class="nav-item">The Collection</a>
+                <a href="#craftsmanship" class="nav-item">Craftsmanship</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Full-Bleed Hero Section -->
+    <!-- Section 1: Neutral Editorial Hero (No specific watch, pure mood setup) -->
     <section class="hero-section" id="hero">
-        <!-- Edge-to-edge background watch gears visual -->
         <div class="hero-bleed-background">
-            <img src="assets/watch_bleed_bg.jpg" alt="Macro watch movement gears" class="hero-bleed-img">
+            <img src="assets/watch_bleed_bg.jpg" alt="Macro Caliber Gears" class="hero-bleed-img">
             <div class="hero-overlay-mask"></div>
         </div>
 
-        <div class="hero-content">
-            <!-- Giant Layered Display Typography Behind the Watch -->
-            <div class="giant-display-bg" id="hero-display-bg-text">5308G</div>
+        <div class="hero-content container">
+            <!-- Giant Layered Display Typography -->
+            <div class="giant-display-bg">HOROLOGY</div>
 
-            <!-- Centered Floating Watch Model -->
-            <div class="hero-watch-wrapper">
-                <img src="assets/Ref_5308g.png" alt="Watch Model" class="hero-watch-image floating-watch" id="hero-watch-img-el">
-            </div>
-
-            <!-- Watch Selection Tabs at the bottom of the Showcase -->
-            <div class="watch-selection-container scroll-reveal">
-                <div class="watch-selection-tabs">
-                    <button class="watch-tab active" data-watch="patek">PATEK 5308G</button>
-                    <button class="watch-tab" data-watch="seiko">SEIKO ASTRON</button>
-                    <button class="watch-tab" data-watch="casio">CASIO ROYALE</button>
-                </div>
-            </div>
-
-            <!-- Foreground Branding -->
+            <!-- Foreground Content & Brand Statement -->
             <div class="hero-branding">
-                <span class="sub-title" id="hero-brand-tag">PATEK PHILIPPE</span>
-                <h1 id="hero-watch-title">Perpetual Split-Seconds Chronograph</h1>
-                <p class="hero-desc" id="hero-watch-desc">
-                    A mechanical masterpiece. The Ref. 5308G-001 combines a minute repeater, a split-seconds chronograph, and an instantaneous perpetual calendar cased in 18K white gold.
+                <span class="sub-title">CHRONOS APEX SALON</span>
+                <h1>The Architecture of Time</h1>
+                <p class="hero-desc">
+                    Welcome to the private showroom of Chronos Apex. Experience a curated exhibition of double-complication movements, space-calibrated GPS chronographs, and skeletonized masterpieces.
                 </p>
                 <div class="hero-actions">
-                    <a href="#details" class="hero-scroll-btn">
-                        <span>EXPLORE DETAILS</span>
+                    <a href="#product-section" class="hero-scroll-btn">
+                        <span>EXPLORE THE COLLECTION</span>
                         <span class="material-symbols-rounded">expand_more</span>
                     </a>
                 </div>
@@ -79,131 +69,146 @@
         </div>
     </section>
 
-    <!-- Bento Grid Showcase (Gallery + Specs) -->
-    <section class="bento-section" id="details">
+    <!-- Section 2: Watch Selector, Gallery, Specs, and CTA (1:1 Ratio, 100% Transparent Watches) -->
+    <section class="product-section" id="product-section">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <span class="gold-tag">THE ANATOMY</span>
-                <h2>HOROLOGICAL PERSPECTIVES</h2>
-                <p>An intricate look at Chronos Apex’s selected masterpiece.</p>
+            
+            <!-- Re-located Watch Selector: Placed at the top of Section 2, immediately after the Hero section -->
+            <div class="selector-bar-wrapper scroll-reveal">
+                <span class="selector-lbl">SELECT MODEL</span>
+                <div class="watch-selection-tabs">
+                    <button class="watch-tab active" data-watch="seiko_astron">Seiko Astron</button>
+                    <button class="watch-tab" data-watch="patek_5304">Patek Philippe</button>
+                    <button class="watch-tab" data-watch="royal_oak">Audemars Piguet</button>
+                </div>
             </div>
 
-            <div class="bento-grid">
-                <!-- Card 1: Large Visual Showcase -->
-                <div class="bento-card card-large scroll-reveal">
-                    <div class="bento-card-glow"></div>
-                    <div class="card-inner">
-                        <span class="card-tag" id="bento-1-tag">THE CALIBER</span>
-                        <h3 id="bento-1-title">R CH 27 PS QI</h3>
-                        <p id="bento-1-desc">This self-winding movement is a technical tour de force, integrating a repeater, monopusher chronograph, split-seconds, and perpetual calendar wheels.</p>
-                        <div class="bento-img-wrap">
-                            <img src="assets/desktop-edifice-night-time.avif" alt="Watch Macro Detail" class="bento-image" id="bento-1-img">
+            <!-- 1:1 Responsive Grid Layout (Gallery Left, Specs Right) -->
+            <div class="gallery-specs-grid">
+                
+                <!-- Left Side: Interactive Gallery -->
+                <div class="gallery-column scroll-reveal">
+                    <div class="gallery-viewer">
+                        <div class="border-beam-line"></div>
+                        <div class="viewer-inner">
+                            <!-- Background model text layer inside gallery viewer -->
+                            <div class="gallery-display-bg" id="gallery-display-bg-text">ASTRON</div>
+                            
+                            <img src="assets/seiko_astron_1.png" alt="Watch Showcase" class="active-gallery-image contain-mode" id="main-gallery-img">
+                            <div class="gallery-caption" id="gallery-caption-text">Dial View — Titanium casing with faceted bezel</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Thumbnail Navigation -->
+                    <div class="gallery-thumbnails" id="gallery-thumbs-container">
+                        <div class="thumbnail active" data-img="assets/seiko_astron_1.png" data-caption="Dial View — Titanium casing with faceted bezel" data-transparent="true">
+                            <img src="assets/seiko_astron_1.png" alt="Front View Thumbnail">
+                        </div>
+                        <div class="thumbnail" data-img="assets/seiko_astron_2.png" data-caption="Profile View — Lightweight titanium case profile" data-transparent="true">
+                            <img src="assets/seiko_astron_2.png" alt="Angle View Thumbnail">
+                        </div>
+                        <div class="thumbnail" data-img="assets/seiko_astron_3.png" data-caption="Solar Dial Detail — Light energy absorption panel" data-transparent="true">
+                            <img src="assets/seiko_astron_3.png" alt="Detail View Thumbnail">
+                        </div>
+                        <div class="thumbnail" data-img="assets/seiko_astron_4.png" data-caption="Wrist Presence — Breathtaking comfort and legibility" data-transparent="true">
+                            <img src="assets/seiko_astron_4.png" alt="Wrist View Thumbnail">
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2: Technical Metrics -->
-                <div class="bento-card scroll-reveal">
-                    <div class="bento-card-glow"></div>
-                    <div class="card-inner flex-center-content" id="bento-metrics-wrap">
-                        <span class="card-tag">METRICS</span>
-                        <h3 id="bento-metrics-title">Ref. 5308G-001</h3>
-                        <div class="metrics-grid" id="metrics-items-container">
-                            <div class="metric-box">
-                                <span class="metric-num">799</span>
-                                <span class="metric-lbl">Individual Parts</span>
-                            </div>
-                            <div class="metric-box">
-                                <span class="metric-num">48h</span>
-                                <span class="metric-lbl">Power Reserve</span>
-                            </div>
-                            <div class="metric-box">
-                                <span class="metric-num">63</span>
-                                <span class="metric-lbl">Jewels</span>
-                            </div>
+                <!-- Right Side: Specifications Table -->
+                <div class="specs-column scroll-reveal">
+                    <div class="specs-card">
+                        <div class="specs-header">
+                            <span class="card-tag" id="hero-brand-tag">SEIKO ASTRON</span>
+                            <h3 id="hero-watch-title">Titanium Astron GPS Solar</h3>
+                            <p id="hero-watch-desc">
+                                High-tech celestial precision. Driven by Seiko's GPS Solar caliber, it connects to the GPS network to adjust automatically to your local time zone anywhere on Earth.
+                            </p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: The Heart / Caliber -->
-                <div class="bento-card scroll-reveal">
-                    <div class="bento-card-glow"></div>
-                    <div class="card-inner">
-                        <span class="card-tag" id="bento-3-tag">CRAFTSMANSHIP</span>
-                        <h3 id="bento-3-title">Instantaneous Calendar</h3>
-                        <p id="bento-3-desc">All calendar displays jump simultaneously and instantaneously at midnight in a fraction of a second, driven by a patented system of levers.</p>
-                        <div class="bento-img-wrap">
-                            <img src="assets/desktop-edifice-windflow.avif" alt="Watch Movement" class="bento-image" id="bento-3-img">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4: Large Specifications Card with Magic UI Border Beam -->
-                <div class="bento-card card-large border-beam-card scroll-reveal" id="specs">
-                    <div class="border-beam-line"></div>
-                    <div class="card-inner no-overflow">
-                        <span class="card-tag">TECHNICAL ATTRIBUTES</span>
-                        <h3>Specifications</h3>
-                        <div class="specs-table-bento" id="bento-specs-rows">
+                        
+                        <div class="specs-table" id="specs-table-container">
                             <div class="spec-row">
                                 <span class="spec-lbl">Reference Number</span>
-                                <span class="spec-val">5308G-001</span>
+                                <span class="spec-val">Ref. SSH175J1</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-lbl">Caliber Movement</span>
+                                <span class="spec-val">Caliber 5X53 GPS Solar Dual-Time</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-lbl">Accuracy</span>
+                                <span class="spec-val">±15 seconds per month (without GPS signal)</span>
                             </div>
                             <div class="spec-row">
                                 <span class="spec-lbl">Case Material</span>
-                                <span class="spec-val">18K White Gold, interchangeable sapphire back</span>
+                                <span class="spec-val">Titanium case with super-hard coating</span>
                             </div>
                             <div class="spec-row">
                                 <span class="spec-lbl">Dimensions</span>
-                                <span class="spec-val">42 mm Diameter, 17.7 mm Thickness</span>
+                                <span class="spec-val">42.7 mm Diameter, 12.2 mm Thickness</span>
                             </div>
                             <div class="spec-row">
-                                <span class="spec-lbl">Caliber</span>
-                                <span class="spec-val">Caliber R CH 27 PS QI (Self-winding)</span>
+                                <span class="spec-lbl">Water Resistance</span>
+                                <span class="spec-val">10 bar (100 meters)</span>
                             </div>
-                            <div class="spec-row">
-                                <span class="spec-lbl">Complications</span>
-                                <span class="spec-val">Minute Repeater, Split-seconds Chronograph, Instantaneous Perpetual Calendar</span>
-                            </div>
-                            <div class="spec-row">
-                                <span class="spec-lbl">Strap</span>
-                                <span class="spec-val">Hand-stitched alligator leather with fold-over clasp</span>
-                            </div>
+                        </div>
+
+                        <div class="specs-action">
+                            <button class="cta-inquire-trigger cta-btn-gold block-btn">
+                                <span>REQUEST ALLOCATION</span>
+                                <span class="material-symbols-rounded">confirmation_number</span>
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 5: Lifestyle Wrist Shot -->
-                <div class="bento-card scroll-reveal">
-                    <div class="bento-card-glow"></div>
-                    <div class="card-inner">
-                        <span class="card-tag">SHOWCASE</span>
-                        <h3>Acquisition Profile</h3>
-                        <p>Experience the ultimate statement of design and precision.</p>
-                        <div class="bento-img-wrap">
-                            <img src="assets/Ref_5308g.png" alt="Lifestyle Watch view" class="bento-image" id="bento-5-img">
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Strong Buy/Inquire CTA Section -->
-    <section class="cta-section">
-        <div class="cta-radial-glow"></div>
-        <div class="container scroll-reveal">
-            <div class="cta-card">
-                <span class="gold-tag">ACQUISITION DESK</span>
-                <h2>BEGIN YOUR LEGACY</h2>
-                <p>
-                    Allocations for this masterpiece timepiece are highly limited. Secure your ticket for a private consultation, virtual showing, or regional allocation.
+    <!-- Section 3: Craftsmanship & Philosophy (Scroll Reveal) -->
+    <section class="craftsmanship-section" id="craftsmanship">
+        <!-- Magic UI Grid Beams Background Effect -->
+        <div class="grid-beams-container">
+            <div class="grid-line horizontal" style="top: 25%;"></div>
+            <div class="grid-line horizontal" style="top: 50%;"></div>
+            <div class="grid-line horizontal" style="top: 75%;"></div>
+            <div class="grid-line vertical" style="left: 20%;"></div>
+            <div class="grid-line vertical" style="left: 40%;"></div>
+            <div class="grid-line vertical" style="left: 60%;"></div>
+            <div class="grid-line vertical" style="left: 80%;"></div>
+            <div class="light-beam beam-1"></div>
+            <div class="light-beam beam-2"></div>
+            <div class="light-beam beam-3"></div>
+            <div class="light-beam beam-4"></div>
+        </div>
+
+        <div class="container grid-2">
+            <!-- Left Side: Editorial Typography Scroll Reveal -->
+            <div class="craft-text scroll-reveal">
+                <span class="gold-tag">THE ART OF CHRONOMETRY</span>
+                <h2>Caliber Architecture</h2>
+                <p class="highlight-paragraph" id="craftsmanship-highlight">
+                    Unparalleled satellite time keeping synchronized from outer space.
                 </p>
-                <div class="cta-actions">
-                    <button class="cta-inquire-trigger cta-btn-gold">
-                        <span>REQUEST PRIVATE ALLOCATION</span>
-                        <span class="material-symbols-rounded">confirmation_number</span>
-                    </button>
+                <p id="craftsmanship-desc">
+                    Seiko's 5X53 GPS Solar movement connects to GPS satellites to calibrate timezone, date, and time variables automatically. Powered by light, it never needs a battery replacement.
+                </p>
+                <div class="craft-quote">
+                    <blockquote>"Precision is not simply a metric of time, but the architecture of mechanical soul."</blockquote>
+                    <cite>— Chronos Apex Workshop</cite>
+                </div>
+            </div>
+
+            <!-- Right Side: Parallax Image of Caliber -->
+            <div class="craft-image-container scroll-reveal">
+                <div class="parallax-wrapper">
+                    <img src="assets/seiko_astron_5.png" alt="Caliber movement" class="parallax-img" id="craft-caliber-img">
+                </div>
+                <div class="image-label">
+                    <span class="label-title" id="craft-caliber-title">Astron 5X53 GPS Caliber</span>
+                    <span class="label-desc" id="craft-caliber-specs">Solar quartz module, timezone sync</span>
                 </div>
             </div>
         </div>
@@ -212,24 +217,25 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container flex-between">
-            <p class="footer-logo">CHRONOS<span class="gold-text">APEX</span></p>
-            <p>&copy; 2026 Chronos Apex S.A. All rights reserved. Private Salon.</p>
+            <p class="footer-logo">CHRONOS APEX<span class="gold-text"> COLLECTION</span></p>
+            <p>&copy; 2026 Chronos Apex S.A. All rights reserved. Private Salon Collection.</p>
             <div class="footer-socials">
-                <a href="#">Instagram</a>
-                <a href="#">Contact</a>
+                <a href="#">Salon Geneva</a>
+                <a href="#">Inquire</a>
             </div>
         </div>
     </footer>
 
-    <!-- Inquiry Modal -->
+    <!-- Acquisition & Consultation Modal -->
     <div class="modal-overlay" id="inquire-modal">
         <div class="modal-container">
             <button class="close-modal-btn" id="close-inquire-modal">
                 <span class="material-symbols-rounded">close</span>
             </button>
-            <div class="modal-header">
-                <h2>ACQUISITION DESK</h2>
-                <p>Register your interest. Our advisors will contact you in private within 24 hours.</p>
+            
+            <div class="modal-header" id="modal-header-section">
+                <h2>PRIVATE ACQUISITION DESK</h2>
+                <p>Register your interest. A luxury advisor from our regional private salon will contact you within 24 hours.</p>
             </div>
             
             <form id="inquiry-form" class="inquiry-form">
@@ -240,24 +246,25 @@
                 </div>
                 <div class="form-group">
                     <label for="client-email">Email Address</label>
-                    <input type="email" id="client-email" required placeholder="name@domain.com">
+                    <input type="email" id="client-email" required placeholder="g.naik@luxury.com">
                     <span class="error-msg" id="email-error"></span>
                 </div>
                 <div class="form-group">
-                    <label for="client-watch">Timepiece Reference</label>
-                    <select id="client-watch">
-                        <option value="patek" id="modal-opt-patek">Patek Philippe Ref. 5308G</option>
-                        <option value="seiko" id="modal-opt-seiko">Seiko Astron HAB004J1</option>
-                        <option value="casio" id="modal-opt-casio">Casio Royale AE-1200</option>
+                    <label for="client-salon">Preferred Salon Location</label>
+                    <select id="client-salon">
+                        <option value="geneva">Geneva (Rue du Rhône)</option>
+                        <option value="london">London (New Bond Street)</option>
+                        <option value="newyork">New York (Fifth Avenue)</option>
+                        <option value="tokyo">Tokyo (Ginza Private Salon)</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="client-message">Special Notes / Salon Location</label>
-                    <textarea id="client-message" placeholder="Provide details regarding delivery location, engraving, or specific requests..."></textarea>
+                    <label for="client-message">Special Accommodations / Request Details</label>
+                    <textarea id="client-message" placeholder="Please specify if you wish to preview the timepiece, require custom engraving, or have shipping requirements."></textarea>
                 </div>
                 
                 <button type="submit" class="cta-btn-gold block-btn">
-                    <span>TRANSMIT ALLOCATION REQUEST</span>
+                    <span>TRANSMIT REQUISITION CARD</span>
                     <span class="material-symbols-rounded">send</span>
                 </button>
             </form>
@@ -267,8 +274,9 @@
                 <div class="success-icon">
                     <span class="material-symbols-rounded">verified</span>
                 </div>
-                <h3>REQUISITION RECEIVED</h3>
-                <p>Your allocation query has been logged. An advisor from our Private Client Office will reach out shortly.</p>
+                <h3>REQUISITION TRANSMITTED</h3>
+                <p>Your allocation inquiry is registered in the Salon Archives. A Private Client Advisor will contact you directly.</p>
+                
                 <div class="ticket-mock">
                     <div class="ticket-header">
                         <h4>CHRONOS APEX</h4>
@@ -276,10 +284,12 @@
                     </div>
                     <div class="ticket-body">
                         <p class="ticket-name" id="ticket-client-name">Girish Naik</p>
-                        <p class="ticket-watch-model" id="ticket-success-model">Patek Philippe Ref. 5308G</p>
-                        <p class="ticket-code" id="ticket-reference-id">REF-PATEK-9908-G</p>
+                        <p class="ticket-watch-model" id="ticket-success-model">Seiko Astron GPS Solar</p>
+                        <p class="ticket-details"><strong id="ticket-salon-location">Geneva Salon</strong> · VIP Consultation</p>
+                        <p class="ticket-code" id="ticket-reference-id">REF-APEX-5308-4829</p>
                     </div>
                 </div>
+                
                 <button class="nav-btn block-btn" id="close-success-btn">Return to Salon</button>
             </div>
         </div>
