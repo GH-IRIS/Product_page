@@ -1,6 +1,6 @@
 <div align="center">
 
-# Chronos Apex Watch Showcase
+# Chronos Watch Showcase
 
 ### Time, engineered beautifully.
 
@@ -19,7 +19,8 @@
 - **FAQ + Footer**
 
 ## Screenshots
-![Watch Product Page Screenshot](https://picsum.photos/600/300?random=85)
+![Chronos Watch Showcase Page](https://GH-IRIS.github.io/Portfolio/assets/product_page.png)
+![Chronos Watch Card Showcase](https://GH-IRIS.github.io/Portfolio/assets/project_watch.jpg)
 
 ## Design notes
 Product chosen: luxury watch (Casio Edifice, Patek Philippe, Seiko Astron)
@@ -42,7 +43,7 @@ This project was built during my frontend training at **[TAP Academy](https://th
 - 🚀 **Get placed in 60 days** — dedicated placement track with daily placement drives
 - 🥽 **Augmented Reality (AR) classrooms** — concepts you can see, not just read
 - 🎤 **Weekly mock interviews** with real-time feedback
-- 👨🏫 **1-on-1 mentorship** and round-the-clock doubt support
+- 👨‍🏫 **1-on-1 mentorship** and round-the-clock doubt support
 - 💻 Courses in **Java, Python, Full Stack Development, Data Science & AI**
 
 ### ❓ FAQ

@@ -120,6 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupNavigationHighlight();
     setupInquiryModal();
     setupWatchTabs();
+    setupMobileMenu();
 });
 
 // 2. Mouse Spotlight Ambient Glow coordinates tracking
@@ -497,6 +498,34 @@ function setupInquiryModal() {
                 if (modalHeader) modalHeader.classList.add("hidden");
                 if (successState) successState.classList.remove("hidden");
             }
+        });
+    }
+}
+
+// 10. Mobile Navigation Hamburger Menu Toggle
+function setupMobileMenu() {
+    const toggleBtn = document.getElementById("mobile-toggle-btn");
+    const navLinks = document.getElementById("nav-links-menu");
+
+    if (toggleBtn && navLinks) {
+        toggleBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            
+            const icon = toggleBtn.querySelector("span");
+            if (navLinks.classList.contains("active")) {
+                icon.textContent = "close";
+            } else {
+                icon.textContent = "menu";
+            }
+        });
+
+        // Close menu when clicking link
+        navLinks.querySelectorAll(".nav-item").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                const icon = toggleBtn.querySelector("span");
+                if (icon) icon.textContent = "menu";
+            });
         });
     }
 }

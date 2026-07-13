@@ -1320,17 +1320,69 @@ input:focus, select:focus, textarea:focus {
     }
 }
 
+/* Mobile Toggle Button Desktop Styling */
+.mobile-toggle-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    z-index: 100;
+    transition: color 0.3s ease;
+}
+
+.mobile-toggle-btn span {
+    font-size: 1.8rem;
+}
+
 @media (max-width: 768px) {
     .scroll-tracing-beam {
         display: none;
     }
     
-    .nav-links {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+    }
+    
+    .nav-left {
         display: none;
     }
     
-    .nav-container {
-        padding: 16px 20px;
+    .mobile-toggle-btn {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(5, 5, 7, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        align-items: center;
+        z-index: 99;
+        justify-self: stretch;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-item {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
     }
     
     .watch-selection-tabs {
